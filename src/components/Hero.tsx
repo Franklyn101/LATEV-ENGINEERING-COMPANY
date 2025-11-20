@@ -44,7 +44,7 @@ export default function Hero() {
       
 
         <div className="flex flex-col sm:flex-row gap-4  mt-10">
-          <button className="bg-[#b4393c] text-white px-10 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg">
+          <button className="bg-[#b4393c] text-white px-4 w-60 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg">
             Explore Our Work
           </button>
         

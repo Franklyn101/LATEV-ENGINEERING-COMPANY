@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <header className={`fixed w-full top-0 z-50 transition-colors duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center p-3 py-4">
           
           <Link href="/" className="flex items-center">
             <div className="w-40 h-12 flex items-center justify-center rounded">
