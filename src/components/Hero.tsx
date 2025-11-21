@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-
 export default function Hero() {
   const slides = [
     {
@@ -12,7 +11,7 @@ export default function Hero() {
     {
       video: "/riging.mp4",
       title: "Engineering Excellence Across Nigeria",
-      button: "Discover Our Projects",
+      button: "Our Projects",
     },
     {
       video: "/2048246-hd_1920_1080_24fps.mp4",
@@ -23,6 +22,7 @@ export default function Hero() {
 
   const [current, setCurrent] = useState(0);
   const [activeVideo, setActiveVideo] = useState<"A" | "B">("A");
+  const [animateButton, setAnimateButton] = useState(false);
 
   const videoA = useRef<HTMLVideoElement>(null);
   const videoB = useRef<HTMLVideoElement>(null);
@@ -31,7 +31,6 @@ export default function Hero() {
   const goToNext = () => {
     const nextIndex = (current + 1) % slides.length;
     const nextVideo = slides[nextIndex].video;
-
     const inactiveVideo = activeVideo === "A" ? videoB.current : videoA.current;
 
     if (!inactiveVideo) return;
@@ -41,9 +40,12 @@ export default function Hero() {
     inactiveVideo.load();
 
     inactiveVideo.oncanplay = () => {
-      // Once loaded, switch layers
       setActiveVideo(activeVideo === "A" ? "B" : "A");
       setCurrent(nextIndex);
+
+      // Trigger button animation
+      setAnimateButton(true);
+      setTimeout(() => setAnimateButton(false), 500); // duration matches transition
     };
   };
 
@@ -79,25 +81,29 @@ export default function Hero() {
         }`}
       />
 
-     
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
-      
-      <div className="relative z-20 max-w-[230px] transition-opacity duration-700">
+      {/* Text + button */}
+      <div className="relative z-20 max-w-[230px] transition-opacity md:pl-10 duration-700">
         <h1 className="text-4xl md:text-3xl font-bold text-white leading-tight">
           {slides[current].title}
         </h1>
 
-      
-
-        <div className="flex flex-col sm:flex-row gap-4  mt-10">
-          <button className="bg-[#b4393c] text-white px-4 w-60 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg">
-            Explore Our Work
+        <div className="flex flex-col sm:flex-row gap-4 mt-10">
+          {/* Animated Hero Button */}
+          <button className="relative text-sm overflow-hidden px-4 w-40 py-3 rounded-lg font-semibold text-white border border-[#b4393c]">
+            {slides[current].button}
+            <span
+              className={`absolute inset-0 bg-[#b4393c] transition-transform duration-500 ease-in-out z-[-1] ${
+                animateButton ? "translate-x-0" : "-translate-x-full"
+              }`}
+            ></span>
           </button>
         </div>
       </div>
 
-     
+      {/* Bullets */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
         {slides.map((_, index) => (
           <button
