@@ -1,15 +1,16 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
+
 export default function Hero() {
   const slides = [
     {
-      video: "/1197802-hd_1920_1080_25fps.mp4",
+      video: "/weilding.mp4",
       title: "Building the Future, Transforming Communities",
       button: "Explore Our Work",
     },
     {
-      video: "/11996993_3840_2160_30fps.mp4",
+      video: "/riging.mp4",
       title: "Engineering Excellence Across Nigeria",
       button: "Discover Our Projects",
     },
@@ -82,14 +83,16 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60"></div>
 
       
-      <div className="relative z-20 max-w-xl transition-opacity duration-700">
+      <div className="relative z-20 max-w-[230px] transition-opacity duration-700">
         <h1 className="text-4xl md:text-3xl font-bold text-white leading-tight">
           {slides[current].title}
         </h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-10">
+      
+
+        <div className="flex flex-col sm:flex-row gap-4  mt-10">
           <button className="bg-[#b4393c] text-white px-4 w-60 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg">
-            {slides[current].button}
+            Explore Our Work
           </button>
         </div>
       </div>
