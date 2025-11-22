@@ -57,7 +57,6 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen w-full flex items-center pl-20 overflow-hidden">
-
       {/* VIDEO A */}
       <video
         ref={videoA}
@@ -65,9 +64,8 @@ export default function Hero() {
         muted
         playsInline
         src={slides[0].video}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-          activeVideo === "A" ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${activeVideo === "A" ? "opacity-100" : "opacity-0"
+          }`}
       />
 
       {/* VIDEO B */}
@@ -76,9 +74,8 @@ export default function Hero() {
         autoPlay
         muted
         playsInline
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-          activeVideo === "B" ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${activeVideo === "B" ? "opacity-100" : "opacity-0"
+          }`}
       />
 
       {/* Dark overlay */}
@@ -95,9 +92,8 @@ export default function Hero() {
           <button className="relative text-sm overflow-hidden px-4 w-40 py-3 rounded-lg font-semibold text-white border border-[#b4393c]">
             {slides[current].button}
             <span
-              className={`absolute inset-0 bg-[#b4393c] transition-transform duration-500 ease-in-out z-[-1] ${
-                animateButton ? "translate-x-0" : "-translate-x-full"
-              }`}
+              className={`absolute inset-0 bg-[#b4393c] transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
+                }`}
             ></span>
           </button>
         </div>
@@ -112,9 +108,8 @@ export default function Hero() {
               setCurrent(index);
               goToNext();
             }}
-            className={`w-3 h-3 rounded-full transition ${
-              current === index ? "bg-white scale-125" : "bg-white/40 hover:bg-white/70"
-            }`}
+            className={`w-3 h-3 rounded-full transition ${current === index ? "bg-white scale-125" : "bg-white/40 hover:bg-white/70"
+              }`}
           />
         ))}
       </div>

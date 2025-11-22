@@ -10,7 +10,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) { 
+      if (window.scrollY > 50) {
         setScrolled(true)
       } else {
         setScrolled(false)
@@ -24,8 +24,11 @@ export default function Header() {
   return (
     <header className={`fixed w-full top-0 z-50 transition-colors duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto">
+        <div className={`gap-3 px-4 py-2 ${scrolled ? 'hidden' : 'flex'}`}>
+          <a className="text-xs text-white hover:underline" href="#">Privacy</a>
+          <a className="text-xs text-white hover:underline" href="#">Public Relations</a>
+        </div>
         <div className="flex justify-between items-center p-3 py-4">
-          
           <Link href="/" className="flex items-center">
             <div className="w-40 h-12 flex items-center justify-center rounded">
               <Image src="/logonobg.png" alt="DUTUM GROUP Logo" width={160} height={48} />
