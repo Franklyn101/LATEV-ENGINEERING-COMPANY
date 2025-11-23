@@ -45,13 +45,13 @@ export default function Hero() {
 
       // Trigger button animation
       setAnimateButton(true);
-      setTimeout(() => setAnimateButton(false), 500); // duration matches transition
+      setTimeout(() => setAnimateButton(false), 500);
     };
   };
 
   // Auto-rotate
   useEffect(() => {
-    const interval = setInterval(goToNext, 7000);
+    const interval = setInterval(goToNext, 10000);
     return () => clearInterval(interval);
   }, [current, activeVideo]);
 
@@ -82,8 +82,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Text + button */}
-      <div className="relative z-20 max-w-[230px] transition-opacity md:pl-10 duration-700">
-        <h1 className="text-4xl md:text-3xl font-bold text-white leading-tight">
+      <div className="relative z-20 max-w-4xl transition-opacity md:pl-10 duration-700">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight">
           {slides[current].title}
         </h1>
 
