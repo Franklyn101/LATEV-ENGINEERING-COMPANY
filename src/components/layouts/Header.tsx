@@ -19,7 +19,7 @@ import {
   Linkedin,
   Twitter
 } from 'lucide-react'
-import { RippleButton } from './shared/button'
+import { RippleButton } from '../shared/button'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)

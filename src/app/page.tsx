@@ -1,12 +1,5 @@
-import Hero from "@/components/Hero";
-import Image from "next/image";
+import HomePageContainers from "@/components/containers/HomePageContainers";
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      </div>
-    </>
-  );
+  return <HomePageContainers />
 }
