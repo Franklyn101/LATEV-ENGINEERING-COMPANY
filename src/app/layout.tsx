@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     "modern website"
   ],
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/images/logo-self.png",
+    shortcut: "/images/logo-self.png",
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       "Advanced, pressure-controlled well intervention tools engineered for high-performance downhole applications.",
     type: "website",
     // TODO: ADD CORRECT PAGE URL
-    url: "http://localhost:3000",
+    url: "https://latevengineering.com",
     images: [
       {
         url: "/og-image.png",
