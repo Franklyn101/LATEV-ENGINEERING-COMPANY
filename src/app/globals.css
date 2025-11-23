@@ -124,3 +124,24 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+.footer-link {
+  @apply text-gray-300 transition-all duration-300 relative inline-block;
+}
+
+.footer-link::after {
+  content: "";
+  @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-white transition-all duration-300;
+}
+
+.footer-link:hover {
+  @apply text-white;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+.social-icon {
+  @apply transition-all duration-300 hover:scale-110 hover:opacity-80;
+}
