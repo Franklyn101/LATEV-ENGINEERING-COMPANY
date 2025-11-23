@@ -90,10 +90,10 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 mt-10">
             {/* Animated Hero Button */}
-            <button className="relative text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold text-white border border-[#b4393c]">
+            <button className="relative text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold text-white border border-brand-red">
               {slides[current].button}
               <span
-                className={`absolute inset-0 bg-[#b4393c] transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
+                className={`absolute inset-0 bg-brand-red transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
                   }`}
               ></span>
             </button>
