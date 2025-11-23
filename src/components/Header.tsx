@@ -3,71 +3,202 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import { motion, AnimatePresence } from 'framer-motion'
+
+import {
+  Home,
+  Info,
+  Wrench,
+  FolderKanban,
+  Phone,
+  AlignJustify,
+  X,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter
+} from 'lucide-react'
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+
+  const navItems = [
+    { name: 'Home', href: '/', icon: Home },
+    { name: 'About', href: '/about', icon: Info },
+    { name: 'Services', href: '/services', icon: Wrench },
+    { name: 'Projects', href: '/projects', icon: FolderKanban },
+    { name: 'Contact', href: '/contact', icon: Phone },
+  ]
+
+  const isActive = (href: string) => pathname === href
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-    }
-
+    const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-colors duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
-      <div className="container mx-auto">
-        <div className={`gap-3 px-4 py-2 ${scrolled ? 'hidden' : 'flex'}`}>
-          <a className="text-xs text-white hover:underline" href="#">Privacy</a>
-          <a className="text-xs text-white hover:underline" href="#">Public Relations</a>
-        </div>
-        <div className="flex justify-between items-center p-3 py-4">
-          <Link href="/" className="flex items-center">
-            <div className="w-40 h-12 flex items-center justify-center rounded">
-              <Image src="/images/logonobg.png" alt="DUTUM GROUP Logo" width={160} height={48} />
-            </div>
-          </Link>
+    <header
+      className={`fixed top-0 w-full z-[100] transition-all duration-300
+        ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}
+      `}
+    >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 lg:px-6 py-4">
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <Link href="/" className={`font-medium transition-colors ${scrolled ? 'text-gray-700 hover:text-[#b4393c]' : 'text-white hover:text-[#b4393c]'}`}>Home</Link>
-            <Link href="/about" className={`font-medium transition-colors ${scrolled ? 'text-gray-700 hover:text-[#b4393c]' : 'text-white hover:text-[#b4393c]'}`}>About</Link>
-            <Link href="/services" className={`font-medium transition-colors ${scrolled ? 'text-gray-700 hover:text-[#b4393c]' : 'text-white hover:text-[#b4393c]'}`}>Services</Link>
-            <Link href="/projects" className={`font-medium transition-colors ${scrolled ? 'text-gray-700 hover:text-[#b4393c]' : 'text-white hover:text-[#b4393c]'}`}>Projects</Link>
-            <Link href="/contact" className={`font-medium transition-colors ${scrolled ? 'text-gray-700 hover:text-[#b4393c]' : 'text-white hover:text-[#b4393c]'}`}>Contact</Link>
-          </nav>
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logonobg.png"
+            alt="Latev Engineering Logo"
+            width={160}
+            height={48}
+            className="transition-all duration-300"
+          />
+        </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            className={`md:hidden ${scrolled ? 'text-gray-700' : 'text-white'}`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-6 lg:space-x-10">
+          {navItems.map((item) => (
+            <Link key={item.name} href={item.href}>
+              <span
+                className={`
+                  relative text-sm font-semibold tracking-wide group transition-all duration-300
+                  ${isActive(item.href)
+                    ? 'text-red-600'
+                    : scrolled
+                      ? 'text-black'
+                      : 'text-white'
+                  }
+                `}
+              >
+                {item.name}
+
+                {/* underline */}
+                <span
+                  className={`
+                    absolute left-0 -bottom-1 h-0.5 transition-all duration-300
+                    ${isActive(item.href)
+                      ? 'w-full bg-red-600'
+                      : 'w-0 bg-red-600 group-hover:w-full'}
+                  `}
+                />
+              </span>
+            </Link>
+          ))}
+
+          {/* Desktop CTA */}
+          <Link
+            href="/contact"
+            className="bg-red-600 text-white px-5 py-2 rounded-xl font-semibold shadow-sm
+            hover:bg-red-700 transition-all duration-300"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
+            Contact Our Team
+          </Link>
+        </nav>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className={`md:hidden py-4 border-t transition-colors duration-300 ${scrolled ? 'bg-white' : 'bg-white/70 backdrop-blur-md'}`}>
-            <div className="flex flex-col space-y-4">
-              <Link href="/" className="font-medium text-gray-700 hover:text-blue-800">Home</Link>
-              <Link href="/about" className="font-medium text-gray-700 hover:text-blue-800">About</Link>
-              <Link href="/services" className="font-medium text-gray-700 hover:text-blue-800">Services</Link>
-              <Link href="/projects" className="font-medium text-gray-700 hover:text-blue-800">Projects</Link>
-              <Link href="/contact" className="font-medium text-gray-700 hover:text-blue-800">Contact</Link>
-            </div>
-          </div>
-        )}
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden"
+          onClick={() => setIsOpen(true)}
+        >
+          <AlignJustify
+            size={30}
+            className={scrolled ? 'text-black' : 'text-white'}
+          />
+        </button>
       </div>
+
+      {/* Mobile Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-white p-6 flex flex-col z-[100]"
+          >
+            {/* Mobile header */}
+            <div className="flex items-center justify-between">
+              <Image
+                src="/images/logonobg.png"
+                alt="Latev Engineering Logo"
+                width={140}
+                height={40}
+              />
+              <button onClick={() => setIsOpen(false)} className="text-black">
+                <X size={32} />
+              </button>
+            </div>
+
+            {/* Mobile links */}
+            <div className="mt-14 flex flex-col space-y-6">
+              {navItems.map((item, i) => {
+                const Icon = item.icon
+                return (
+                  <motion.div
+                    key={item.name}
+                    initial={{ x: -40, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`
+                        flex items-center justify-between py-4 border-b text-lg font-semibold
+                        transition-all duration-300
+                        ${isActive(item.href) ? 'text-red-600' : 'text-black'}
+                      `}
+                    >
+                      <div className="flex items-center gap-4">
+                        <Icon
+                          size={22}
+                          className={isActive(item.href) ? 'text-red-600' : 'text-red-500'}
+                        />
+                        {item.name}
+                      </div>
+
+                      {/* Active Dot */}
+                      {isActive(item.href) && (
+                        <span className="w-2 h-2 rounded-full bg-red-600" />
+                      )}
+                    </Link>
+                  </motion.div>
+                )
+              })}
+
+              {/* Mobile CTA */}
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="mt-6 bg-red-600 text-white text-center py-3 rounded-xl font-semibold tracking-wide"
+              >
+                Contact Our Team
+              </Link>
+            </div>
+
+            {/* Social Icons */}
+            <div className="mt-auto pt-10 flex items-center justify-end gap-6">
+              <Link href="#" className="text-black hover:text-red-600 transition">
+                <Facebook size={26} />
+              </Link>
+              <Link href="#" className="text-black hover:text-red-600 transition">
+                <Instagram size={26} />
+              </Link>
+              <Link href="#" className="text-black hover:text-red-600 transition">
+                <Linkedin size={26} />
+              </Link>
+              <Link href="#" className="text-black hover:text-red-600 transition">
+                <Twitter size={26} />
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
