@@ -56,7 +56,7 @@ export default function Hero() {
   }, [current, activeVideo]);
 
   return (
-    <section className="relative h-screen w-full flex items-center pl-20 overflow-hidden">
+    <section className="relative h-screen w-full flex items-center md:pl-10 lg:pl-20 overflow-hidden">
       {/* VIDEO A */}
       <video
         ref={videoA}
@@ -82,20 +82,22 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Text + button */}
-      <div className="relative z-20 max-w-4xl transition-opacity md:pl-10 duration-700">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight">
-          {slides[current].title}
-        </h1>
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="relative z-20 max-w-5xl transition-opacity px-4 md:pl-10 duration-700">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">
+            {slides[current].title}
+          </h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-10">
-          {/* Animated Hero Button */}
-          <button className="relative text-sm overflow-hidden px-4 w-40 py-3 rounded-lg font-semibold text-white border border-[#b4393c]">
-            {slides[current].button}
-            <span
-              className={`absolute inset-0 bg-[#b4393c] transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
-                }`}
-            ></span>
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 mt-10">
+            {/* Animated Hero Button */}
+            <button className="relative text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold text-white border border-[#b4393c]">
+              {slides[current].button}
+              <span
+                className={`absolute inset-0 bg-[#b4393c] transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
+                  }`}
+              ></span>
+            </button>
+          </div>
         </div>
       </div>
 

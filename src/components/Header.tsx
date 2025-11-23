@@ -19,6 +19,7 @@ import {
   Linkedin,
   Twitter
 } from 'lucide-react'
+import { RippleButton } from './shared/button'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -30,7 +31,6 @@ export default function Header() {
     { name: 'About', href: '/about', icon: Info },
     { name: 'Services', href: '/services', icon: Wrench },
     { name: 'Projects', href: '/projects', icon: FolderKanban },
-    { name: 'Contact', href: '/contact', icon: Phone },
   ]
 
   const isActive = (href: string) => pathname === href
@@ -43,7 +43,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-[100] transition-all duration-300
+      className={`fixed top-0 w-full z-100 transition-all duration-300
         ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}
       `}
     >
@@ -68,7 +68,7 @@ export default function Header() {
                 className={`
                   relative text-sm font-semibold tracking-wide group transition-all duration-300
                   ${isActive(item.href)
-                    ? 'text-red-600'
+                    ? 'text-brand-red'
                     : scrolled
                       ? 'text-black'
                       : 'text-white'
@@ -82,8 +82,8 @@ export default function Header() {
                   className={`
                     absolute left-0 -bottom-1 h-0.5 transition-all duration-300
                     ${isActive(item.href)
-                      ? 'w-full bg-red-600'
-                      : 'w-0 bg-red-600 group-hover:w-full'}
+                      ? 'w-full bg-brand-red'
+                      : 'w-0 bg-brand-red group-hover:w-full'}
                   `}
                 />
               </span>
@@ -91,13 +91,9 @@ export default function Header() {
           ))}
 
           {/* Desktop CTA */}
-          <Link
-            href="/contact"
-            className="bg-red-600 text-white px-5 py-2 rounded-xl font-semibold shadow-sm
-            hover:bg-red-700 transition-all duration-300"
-          >
+          <RippleButton>
             Contact Our Team
-          </Link>
+          </RippleButton>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -119,7 +115,7 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-white p-6 flex flex-col z-[100]"
+            className="fixed inset-0 bg-white p-6 flex flex-col z-100"
           >
             {/* Mobile header */}
             <div className="flex items-center justify-between">
@@ -151,20 +147,20 @@ export default function Header() {
                       className={`
                         flex items-center justify-between py-4 border-b text-lg font-semibold
                         transition-all duration-300
-                        ${isActive(item.href) ? 'text-red-600' : 'text-black'}
+                        ${isActive(item.href) ? 'text-brand-red' : 'text-black'}
                       `}
                     >
                       <div className="flex items-center gap-4">
                         <Icon
                           size={22}
-                          className={isActive(item.href) ? 'text-red-600' : 'text-red-500'}
+                          className={isActive(item.href) ? 'text-brand-red' : 'text-red-500'}
                         />
                         {item.name}
                       </div>
 
                       {/* Active Dot */}
                       {isActive(item.href) && (
-                        <span className="w-2 h-2 rounded-full bg-red-600" />
+                        <span className="w-2 h-2 rounded-full bg-brand-red" />
                       )}
                     </Link>
                   </motion.div>
@@ -172,27 +168,23 @@ export default function Header() {
               })}
 
               {/* Mobile CTA */}
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="mt-6 bg-red-600 text-white text-center py-3 rounded-xl font-semibold tracking-wide"
-              >
+              <RippleButton onClick={() => setIsOpen(false)}>
                 Contact Our Team
-              </Link>
+              </RippleButton>
             </div>
 
             {/* Social Icons */}
             <div className="mt-auto pt-10 flex items-center justify-end gap-6">
-              <Link href="#" className="text-black hover:text-red-600 transition">
+              <Link href="#" className="text-black hover:text-brand-red transition">
                 <Facebook size={26} />
               </Link>
-              <Link href="#" className="text-black hover:text-red-600 transition">
+              <Link href="#" className="text-black hover:text-brand-red transition">
                 <Instagram size={26} />
               </Link>
-              <Link href="#" className="text-black hover:text-red-600 transition">
+              <Link href="#" className="text-black hover:text-brand-red transition">
                 <Linkedin size={26} />
               </Link>
-              <Link href="#" className="text-black hover:text-red-600 transition">
+              <Link href="#" className="text-black hover:text-brand-red transition">
                 <Twitter size={26} />
               </Link>
             </div>
