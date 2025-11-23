@@ -31,7 +31,7 @@ export default function Header() {
         <div className="flex justify-between items-center p-3 py-4">
           <Link href="/" className="flex items-center">
             <div className="w-40 h-12 flex items-center justify-center rounded">
-              <Image src="/logonobg.png" alt="DUTUM GROUP Logo" width={160} height={48} />
+              <Image src="/images/logonobg.png" alt="DUTUM GROUP Logo" width={160} height={48} />
             </div>
           </Link>
 

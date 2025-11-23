@@ -4,17 +4,17 @@ import { useEffect, useRef, useState } from "react";
 export default function Hero() {
   const slides = [
     {
-      video: "/weilding.mp4",
+      video: "/videos/weilding.mp4",
       title: "Building the Future, Transforming Communities",
       button: "Explore Our Work",
     },
     {
-      video: "/riging.mp4",
+      video: "/videos/riging.mp4",
       title: "Engineering Excellence Across Nigeria",
       button: "Our Projects",
     },
     {
-      video: "/2048246-hd_1920_1080_24fps.mp4",
+      video: "/videos/building.mp4",
       title: "Innovating for a Better Tomorrow",
       button: "Learn More",
     },
