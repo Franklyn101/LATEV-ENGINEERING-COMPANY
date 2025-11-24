@@ -3,6 +3,7 @@ import "./globals.css";
 import { Noto_Sans, Noto_Serif, Inter } from "next/font/google";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import { createMetadata } from "@/lib/metadata";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -24,44 +25,11 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Latev Engineering Services Ltd – Coiled Tubing Downhole Tools",
   description:
-    "Latev Engineering Services Ltd provides advanced coiled tubing downhole tools engineered for performance, efficiency, and operational safety in complex well intervention environments.",
-  keywords: [
-    "coiled tubing",
-    "downhole tools",
-    "oilfield services",
-    "well intervention",
-    "Marlin Oil Tools",
-    "Latev Engineering",
-    "offshore",
-    "onshore",
-    "wellbore operations",
-    "modern website"
-  ],
-  icons: {
-    icon: "/images/logo-self.png",
-    shortcut: "/images/logo-self.png",
-    apple: "/apple-touch-icon.png",
-  },
-  openGraph: {
-    title: "Latev Engineering Services Ltd – Coiled Tubing Downhole Tools",
-    description:
-      "Advanced, pressure-controlled well intervention tools engineered for high-performance downhole applications.",
-    type: "website",
-    // TODO: ADD CORRECT PAGE URL
-    url: "https://latevengineering.com",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Latev Engineering Services",
-      },
-    ],
-  },
-};
+  "Latev Engineering Services Ltd delivers world-class construction, oilfield, and industrial engineering solutions.",
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

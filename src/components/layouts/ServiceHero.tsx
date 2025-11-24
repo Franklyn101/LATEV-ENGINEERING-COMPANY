@@ -1,6 +1,4 @@
-import React from 'react'
 import Image from 'next/image'
-import { RippleButton } from '../shared/button'
 
 const ServiceHero = () => {
   return (
@@ -19,17 +17,13 @@ const ServiceHero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
-        <h1 className="text-5xl md:text-7xl font-bold font-serif text-white">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">
           Precision Construction for Critical Oil Infrastructure
         </h1>
 
-        <p className="text-lg md:text-2xl mt-4 text-white/90 max-w-2xl">
-         From pipelines to production sites, we deliver end to end solutions built on expertise, efficiency, and uncompromising standards.
+        <p className="text-lg md:text-2xl lg:text-3xl mt-4 text-white/90 max-w-4xl">
+          From pipelines to production sites, we deliver end to end solutions built on expertise, efficiency, and uncompromising standards.
         </p>
-
-        <RippleButton className="mt-8 px-6 py-3 bg-white text-black font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition">
-          Get Started
-        </RippleButton>
       </div>
     </section>
   )
