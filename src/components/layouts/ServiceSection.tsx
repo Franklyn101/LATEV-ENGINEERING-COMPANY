@@ -1,6 +1,7 @@
 "use client";
 import  { JSX, useState } from "react";
 import { RippleButton } from "../shared/button";
+import { motion } from "framer-motion";
 
 export const serviceItems = [
   {
@@ -81,6 +82,17 @@ export default function ServiceSection(): JSX.Element {
 
   return (
     <section className="py-20 space-y-12">
+      {/* <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="lg:col-span-1 space-y-8"
+          > */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8 lg:mb-12"
+            >
       {currentItems.map((item, index) => {
         const isReversed = (startIndex + index) % 2 === 1;
         return (
@@ -141,6 +153,7 @@ export default function ServiceSection(): JSX.Element {
           Next
         </RippleButton>
       </div>
+       </motion.div>
     </section>
   );
 }
