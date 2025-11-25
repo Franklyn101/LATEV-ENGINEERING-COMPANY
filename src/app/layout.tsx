@@ -4,6 +4,7 @@ import { Noto_Sans, Noto_Serif, Inter } from "next/font/google";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import { createMetadata } from "@/lib/metadata";
+import { Toaster } from "sonner";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="grow">{children}</main>
           <Footer />
         </div>
+         <Toaster position="top-right" />
       </body>
     </html>
   );

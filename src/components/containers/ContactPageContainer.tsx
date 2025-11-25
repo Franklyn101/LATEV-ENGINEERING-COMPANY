@@ -1,18 +1,21 @@
 "use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  IconMail, 
-  IconPhone, 
-  IconMapPin, 
-  IconSend, 
-  IconClock,
+import {
+  IconMail,
+  IconPhone,
+  IconMapPin,
+  IconSend,
   IconBrandTwitter,
   IconBrandLinkedin,
   IconBrandInstagram,
-  IconBrandFacebook
+  IconBrandFacebook,
+  IconBrandTiktok
 } from '@tabler/icons-react';
-import { cn } from '@/lib/utils';
+import { RippleButton } from '@/components/shared/button';
+import { toast } from 'sonner';
+import { InputField } from '../shared/input';
+
 
 export default function ModernContactPage() {
   const [formData, setFormData] = useState({
@@ -23,15 +26,56 @@ export default function ModernContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Validation function
+  const isFormValid = () => {
+    const { name, email, subject, message } = formData;
+
+    // Basic validation
+    const isNameValid = name.trim().length >= 2;
+    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const isSubjectValid = subject.trim().length >= 3;
+    const isMessageValid = message.trim().length >= 10;
+
+    return isNameValid && isEmailValid && isSubjectValid && isMessageValid;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!isFormValid()) {
+      toast.error('Please fill all fields correctly', {
+        description: 'All fields are required and must meet validation criteria.',
+        duration: 5000,
+      });
+      return;
+    }
+
     setIsSubmitting(true);
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log('Form submitted:', formData);
-    setIsSubmitting(false);
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      // Simulate successful submission
+      console.log('Form submitted:', formData);
+
+      // Show success toast
+      toast.success('Message sent successfully!', {
+        description: 'We will get back to you within 24 hours.',
+        duration: 5000,
+      });
+
+      // Reset form
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      // Show error toast
+      toast.error('Failed to send message', {
+        description: 'Please try again later.',
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -41,126 +85,121 @@ export default function ModernContactPage() {
     }));
   };
 
-  const contactInfo = [
-    {
-      icon: IconMail,
-      title: 'Email Us',
-      details: 'hello@company.com',
-      description: 'We\'ll respond within 24 hours',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: IconPhone,
-      title: 'Call Us',
-      details: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 9am to 6pm',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: IconMapPin,
-      title: 'Visit Us',
-      details: '123 Business Ave',
-      description: 'New York, NY 10001',
-      color: 'from-orange-500 to-red-500'
-    },
-    {
-      icon: IconClock,
-      title: 'Business Hours',
-      details: 'Mon - Fri: 9:00 - 18:00',
-      description: 'Weekend: Closed',
-      color: 'from-green-500 to-emerald-500'
-    }
-  ];
-
-  const socialLinks = [
-    { icon: IconBrandTwitter, href: '#', color: 'hover:text-blue-400' },
-    { icon: IconBrandLinkedin, href: '#', color: 'hover:text-blue-600' },
-    { icon: IconBrandInstagram, href: '#', color: 'hover:text-pink-500' },
-    { icon: IconBrandFacebook, href: '#', color: 'hover:text-blue-500' },
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen mt-16 py-12 lg:pt-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            Get In Touch
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-20">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="lg:col-span-1 space-y-6"
+            className="lg:col-span-1 space-y-8"
           >
-            {contactInfo.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-                className="group"
-              >
-                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
-                  <div className="flex items-start space-x-4">
-                    <div className={cn(
-                      "p-3 rounded-xl bg-gradient-to-r text-white",
-                      item.color
-                    )}>
-                      <item.icon className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 dark:text-white text-lg mb-1">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-900 dark:text-white font-medium">
-                        {item.details}
-                      </p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8 lg:mb-12"
+            >
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold pb-6">
+                Get In Touch
+              </h1>
+              <p className="text-lg lg:text-xl text-gray-900 my-3 lg:my-8">
+                We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              </p>
+              <p className="text-lg lg:text-xl text-gray-900">
+                We deliver exceptional service and innovative solutions with a personalized approach.
+              </p>
+            </motion.div>
+
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="text-black">
+                  <IconMail className="h-6 w-6" />
                 </div>
-              </motion.div>
-            ))}
+                <div>
+                  <p className="text-gray-900 font-medium">
+                    hello@company.com
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="text-black">
+                  <IconPhone className="h-6 w-6" />
+                </div>
+                <div>
+                  <p className="text-gray-900 font-medium">
+                    +(234) 2330-45674
+                  </p>
+                  <p className="text-gray-900 font-medium">
+                    +(234) 9872-65434
+                  </p>
+                  <p className="text-gray-900 font-medium">
+                    +(234) 4561-78903
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="text-black">
+                  <IconMapPin className="h-6 w-6" />
+                </div>
+                <div>
+                  <p className="text-gray-900 font-medium">
+                    No. 3 Lekki Phase 1, Lagos, Nigeria
+                  </p>
+                </div>
+              </div>
+            </div>
 
             {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-slate-700"
+              className="mt-8"
             >
-              <h3 className="font-semibold text-gray-900 dark:text-white text-lg mb-4">
+              <h3 className="font-semibold text-gray-900 text-lg mb-4">
                 Follow Us
               </h3>
               <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.href}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    className={cn(
-                      "p-3 rounded-lg bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 transition-colors",
-                      social.color
-                    )}
-                  >
-                    <social.icon className="h-5 w-5" />
-                  </motion.a>
-                ))}
+                <motion.a
+                  href="#"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="text-gray-600 hover:text-brand-red transition-colors"
+                >
+                  <IconBrandTwitter className="h-5 w-5" />
+                </motion.a>
+                <motion.a
+                  href="#"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="text-gray-600 hover:text-brand-red transition-colors"
+                >
+                  <IconBrandLinkedin className="h-5 w-5" />
+                </motion.a>
+                <motion.a
+                  href="#"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="text-gray-600 hover:text-brand-red transition-colors"
+                >
+                  <IconBrandInstagram className="h-5 w-5" />
+                </motion.a>
+                <motion.a
+                  href="#"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="text-gray-600 hover:text-brand-red transition-colors"
+                >
+                  <IconBrandFacebook className="h-5 w-5" />
+                </motion.a>
+                <motion.a
+                  href="#"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="text-gray-600 hover:text-brand-red transition-colors"
+                >
+                  <IconBrandTiktok className="h-5 w-5" />
+                </motion.a>
               </div>
             </motion.div>
           </motion.div>
@@ -172,86 +211,60 @@ export default function ModernContactPage() {
             transition={{ delay: 0.4 }}
             className="lg:col-span-2"
           >
-            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-slate-700">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="bg-white rounded lg:border border-gray-200 lg:p-8 xl:py-14">
+              <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Full Name *
-                    </label>
-                    <motion.input
-                      whileFocus={{ scale: 1.02 }}
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Email Address *
-                    </label>
-                    <motion.input
-                      whileFocus={{ scale: 1.02 }}
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Enter your email"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Subject *
-                  </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.02 }}
+                  <InputField
+                    id="name"
+                    name="name"
                     type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
+                    value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                    placeholder="What's this about?"
+                    placeholder="Enter your full name"
+                    label="Full Name"
+                  />
+                  <InputField
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter your email"
+                    label="Email Address"
                   />
                 </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Message *
-                  </label>
-                  <motion.textarea
-                    whileFocus={{ scale: 1.02 }}
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder="Tell us about your project or inquiry..."
-                  />
-                </div>
+                <InputField
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  placeholder="What's this about?"
+                  label="Subject"
+                />
 
-                <motion.button
+                <InputField
+                  id="message"
+                  name="message"
+                  type="textarea"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  placeholder="Tell us about your project or inquiry..."
+                  label="Message"
+                  rows={6}
+                />
+
+                <RippleButton
                   type="submit"
-                  disabled={isSubmitting}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className={cn(
-                    "w-full py-4 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg shadow-lg transition-all duration-200 flex items-center justify-center space-x-2",
-                    isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:shadow-xl"
-                  )}
+                  disabled={isSubmitting || !isFormValid()}
+                  variant="default"
+                  size="lg"
+                  className="w-full text-lg font-semibold"
                 >
                   {isSubmitting ? (
                     <>
@@ -264,7 +277,7 @@ export default function ModernContactPage() {
                       <span>Send Message</span>
                     </>
                   )}
-                </motion.button>
+                </RippleButton>
               </form>
             </div>
           </motion.div>
@@ -277,18 +290,19 @@ export default function ModernContactPage() {
           transition={{ delay: 0.8 }}
           className="mt-16"
         >
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-slate-700">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Find Us Here</h2>
-            <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 h-64 md:h-96 flex items-center justify-center">
-              <div className="text-center">
-                <IconMapPin className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <p className="text-gray-600 dark:text-gray-300 font-medium">
-                  Interactive Map Location
-                </p>
-                <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">
-                  123 Business Ave, New York, NY 10001
-                </p>
-              </div>
+          <div className="bg-white rounded lg:border border-gray-200 lg:p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Us Here</h2>
+            <div className="aspect-w-16 aspect-h-9 rounded overflow-hidden h-64 md:h-96 flex items-center justify-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507402.31713771424!2d3.4452352900551904!3d6.511481745193726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf75df5c74367%3A0x6a7e7df9d6c1cd4a!2sLekki%2C%20Lagos!5e0!3m2!1sen!2sng!4v1764033963823!5m2!1sen!2sng"
+                width="600"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
         </motion.div>
