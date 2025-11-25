@@ -79,7 +79,7 @@ export default function Header() {
           ))}
 
           {/* Desktop CTA */}
-          <RippleButton onClick={()=> router.push("/contact-us")}>
+          <RippleButton onClick={()=> router.push("/contact")}>
             Contact Our Team
           </RippleButton>
         </nav>
@@ -156,7 +156,7 @@ export default function Header() {
               })}
 
               {/* Mobile CTA */}
-            <RippleButton onClick={() => { setIsOpen(false); router.push("/contact-us"); }}>
+            <RippleButton onClick={() => { setIsOpen(false); router.push("/contact"); }}>
                 Contact Our Team
               </RippleButton>
             </div>
