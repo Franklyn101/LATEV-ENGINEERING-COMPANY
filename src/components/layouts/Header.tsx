@@ -3,28 +3,16 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-
-import {
-  Home,
-  Info,
-  Wrench,
-  FolderKanban,
-  Phone,
-  AlignJustify,
-  X,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter
-} from 'lucide-react'
+import { Home, Info, Wrench, FolderKanban, AlignJustify, X, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 import { RippleButton } from '../shared/button'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+  const router = useRouter();
 
   const navItems = [
     { name: 'Home', href: '/', icon: Home },
@@ -91,7 +79,7 @@ export default function Header() {
           ))}
 
           {/* Desktop CTA */}
-          <RippleButton>
+          <RippleButton onClick={()=> router.push("/contact-us")}>
             Contact Our Team
           </RippleButton>
         </nav>
@@ -168,7 +156,7 @@ export default function Header() {
               })}
 
               {/* Mobile CTA */}
-              <RippleButton onClick={() => setIsOpen(false)}>
+            <RippleButton onClick={() => { setIsOpen(false); router.push("/contact-us"); }}>
                 Contact Our Team
               </RippleButton>
             </div>

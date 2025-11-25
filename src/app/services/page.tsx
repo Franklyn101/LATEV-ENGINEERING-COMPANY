@@ -10,6 +10,4 @@ export const metadata = createMetadata({
   keywords: ["services", "construction", "oilfield tools"],
 });
 
-export default function Services() {
-  return <ServicePageContainers />;
-}
+export default function Services() { return <ServicePageContainers />; }
