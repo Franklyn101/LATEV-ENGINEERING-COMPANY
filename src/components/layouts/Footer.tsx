@@ -2,8 +2,19 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1B1C1E] text-white py-16">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+    <footer className="relative text-white py-16 overflow-hidden">
+
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/footer-bg.jpg')" }}
+      ></div>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#1B1C1E]/95"></div>
+
+      {/* CONTENT */}
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
 
         {/* TOP SECTION */}
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-12">
