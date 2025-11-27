@@ -51,7 +51,7 @@ export default function Footer() {
                   <a href="/services" className="footer-link">Services</a>
                 </li>
                 <li>
-                  <a href="/provider" className="footer-link">Providers</a>
+                  <a href="/projects" className="footer-link">Projects</a>
                 </li>
                 <li>
                   <a href="/contact" className="footer-link">Contact</a>
@@ -68,7 +68,7 @@ export default function Footer() {
                   <a href="/faq" className="footer-link">FAQ</a>
                 </li>
                 <li>
-                  <a href="/help-center" className="footer-link">Help Center</a>
+                  <a href="/contact" className="footer-link">Help Center</a>
                 </li>
                 <li>
                   <a href="/privacy" className="footer-link">Privacy Policy</a>
