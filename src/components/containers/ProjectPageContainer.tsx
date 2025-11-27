@@ -29,7 +29,7 @@ export default function ProjectsPageContainer() {
       description:
         'Urgent corrective repairs to a corroded pipeline section, including structural reinforcement and pressure testing to restore full serviceability.',
       image:
-        '',
+        '/images/siteimages/photo_2024-01-07 13.05.45.jpeg',
     },
     {
       id: 'p2',
@@ -40,7 +40,7 @@ export default function ProjectsPageContainer() {
       description:
         'Comprehensive upgrades to tank foundations, access roads and drainage systems to improve resilience and regulatory compliance.',
       image:
-        '',
+        '/images/siteimages/photo_2024-01-07 13.00.04.jpeg',
     },
     {
       id: 'p3',
@@ -51,7 +51,7 @@ export default function ProjectsPageContainer() {
       description:
         'Structural remediation and strengthening of a jetty to extend service life and support heavier loading during offloading operations.',
       image:
-        '',
+        '/images/siteimages/photo_2024-01-07 12.59.35.jpeg',
     },
    
   ], [])
