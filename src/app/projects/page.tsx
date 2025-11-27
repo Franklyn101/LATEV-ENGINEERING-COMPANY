@@ -1,23 +1,26 @@
 import ProjectPageContainer from '@/components/containers/ProjectPageContainer'
 import { createMetadata } from '@/lib/metadata';
-import React from 'react'
-
 
 export const metadata = createMetadata({
   title: "Projects – Latev Engineering Services Ltd",
   description:
-    "Get in touch with Latev Engineering Services Ltd for professional oilfield services, coiled tubing solutions, and engineering support. Reach our team for inquiries, project consultations, or partnership opportunities.",
+    "Explore the portfolio of Latev Engineering Services Ltd, showcasing our engineering, oilfield, and construction projects across Nigeria. Discover our expertise in coiled tubing solutions, well interventions, and industrial engineering projects.",
   keywords: [
-    "service Latev Engineering",
-    "oilfield service support",
-    "coiled tubing tools",
-    "engineering services",
-    "well intervention support",
-    "Latev Engineering contact"
+    "Latev Engineering projects",
+    "engineering project portfolio",
+    "oilfield project solutions",
+    "coiled tubing projects",
+    "construction project showcase",
+    "industrial engineering Nigeria",
+    "well intervention projects",
+    "engineering service portfolio",
+    "project consultations",
+    "Latev Engineering services"
   ],
   url: "https://latevengineering.com/projects",
-  image: "/og-image.png",
+  image: "/images/projects-og.png",
 });
 
-
-export default function  servicePage () { return <ProjectPageContainer /> }
+export default function ProjectsPage() {
+  return <ProjectPageContainer />;
+}
