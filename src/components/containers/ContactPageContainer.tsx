@@ -77,8 +77,8 @@ export default function ModernContactPage() {
   return (
     <div className="min-h-screen">
       <SectionHero
-        title="We want to hear from you"
-        // subtitle="We're here to help and answer any questions you might have"
+        title="We Want to Hear From You"
+        subtitle="We're here to help and answer any questions you might have"
         imageUrl="/images/contact-hero.png"
         overlayOpacity={0.6}
       />

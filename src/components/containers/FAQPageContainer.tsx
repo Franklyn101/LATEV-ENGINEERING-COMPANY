@@ -1,18 +1,21 @@
 "use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  IconChevronDown, 
-  IconTool, 
+import {
+  IconChevronDown,
+  IconTool,
   IconSettings,
   IconShield,
   IconClock,
-  IconAnchor, // Replaced IconBuildingOffshore
+  IconAnchor,
   IconChecklist,
   IconMail,
   IconHelp,
   IconCategory
 } from '@tabler/icons-react';
+import { SectionHero } from '../layouts/SectionHero';
+import { RippleButton } from '../shared/button';
+import { useRouter } from 'next/navigation';
 
 interface FAQItem {
   id: number;
@@ -23,6 +26,7 @@ interface FAQItem {
 }
 
 export default function EngineeringFAQPage() {
+  const router = useRouter();
   const [activeCategory, setActiveCategory] = useState('all');
   const [openItems, setOpenItems] = useState<number[]>([]);
 
@@ -131,30 +135,19 @@ export default function EngineeringFAQPage() {
     { id: 'support', name: 'Support', count: faqData.filter(item => item.category === 'support').length, icon: <IconMail className="h-4 w-4" /> },
   ];
 
-  const filteredFAQs = activeCategory === 'all' 
-    ? faqData 
+  const filteredFAQs = activeCategory === 'all'
+    ? faqData
     : faqData.filter(item => item.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 to-red-900 text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-6">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-xl md:text-2xl text-red-200 max-w-3xl mx-auto">
-              Get answers about our Coiled Tubing Downhole Tools and services
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <SectionHero
+        title="Frequently Asked Questions"
+        subtitle="Get answers about our Coiled Tubing Downhole Tools and services"
+        imageUrl="/images/faq-hero.svg"
+        overlayOpacity={0.7}
+      />
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
@@ -176,27 +169,24 @@ export default function EngineeringFAQPage() {
                   <button
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
-                    className={`w-full text-left px-3 py-3 rounded-lg transition-all duration-200 flex justify-between items-center group ${
-                      activeCategory === category.id
+                    className={`w-full text-left px-3 py-3 rounded-lg transition-all duration-200 flex justify-between items-center group ${activeCategory === category.id
                         ? 'bg-red-50 text-brand-red border border-red-200'
                         : 'text-gray-700 hover:bg-gray-50 hover:border-gray-200 border border-transparent'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className={`${
-                        activeCategory === category.id 
-                          ? 'text-brand-red' 
+                      <div className={`${activeCategory === category.id
+                          ? 'text-brand-red'
                           : 'text-gray-400 group-hover:text-brand-red'
-                      }`}>
+                        }`}>
                         {category.icon}
                       </div>
                       <span className="font-medium">{category.name}</span>
                     </div>
-                    <span className={`text-sm px-2 py-1 rounded-full ${
-                      activeCategory === category.id
+                    <span className={`text-sm px-2 py-1 rounded-full ${activeCategory === category.id
                         ? 'bg-brand-red text-white'
                         : 'bg-gray-100 text-gray-600 group-hover:bg-red-100 group-hover:text-brand-red'
-                    }`}>
+                      }`}>
                       {category.count}
                     </span>
                   </button>
@@ -214,7 +204,7 @@ export default function EngineeringFAQPage() {
             >
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                 {/* Header */}
-                <div className="bg-gradient-to-r from-red-50 to-gray-50 px-6 py-4 border-b border-gray-200">
+                <div className="bg-linear-to-r from-red-50 to-gray-50 px-6 py-4 border-b border-gray-200">
                   <h2 className="text-2xl font-bold text-gray-900">
                     {categories.find(cat => cat.id === activeCategory)?.name}
                   </h2>
@@ -239,7 +229,7 @@ export default function EngineeringFAQPage() {
                           className="w-full px-6 py-6 text-left hover:bg-gray-50 transition-colors duration-200 flex items-start justify-between group"
                         >
                           <div className="flex items-start space-x-4 flex-1">
-                            <div className="text-brand-red mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                            <div className="text-brand-red mt-1 shrink-0 group-hover:scale-110 transition-transform duration-200">
                               {faq.icon}
                             </div>
                             <div className="flex-1">
@@ -251,12 +241,12 @@ export default function EngineeringFAQPage() {
                           <motion.div
                             animate={{ rotate: openItems.includes(faq.id) ? 180 : 0 }}
                             transition={{ duration: 0.2 }}
-                            className="text-gray-400 flex-shrink-0 ml-4 group-hover:text-brand-red"
+                            className="text-gray-400 shrink-0 ml-4 group-hover:text-brand-red"
                           >
                             <IconChevronDown className="h-5 w-5" />
                           </motion.div>
                         </button>
-                        
+
                         <AnimatePresence>
                           {openItems.includes(faq.id) && (
                             <motion.div
@@ -303,7 +293,7 @@ export default function EngineeringFAQPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="mt-12 bg-gradient-to-r from-brand-red to-red-700 rounded-lg shadow-lg p-8 text-center"
+              className="mt-12 bg-linear-to-r from-gray-900 to-red-900 rounded-lg shadow-lg p-8 text-center"
             >
               <h3 className="text-2xl font-bold text-white mb-4">
                 Still have questions?
@@ -312,13 +302,13 @@ export default function EngineeringFAQPage() {
                 Our technical experts are ready to provide detailed information about our Coiled Tubing Downhole Tools and how they can benefit your operations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-brand-red px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors duration-200 flex items-center justify-center">
-                  <IconMail className="h-5 w-5 mr-2" />
-                  Contact Sales
-                </button>
-                <button className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-200">
+                <RippleButton onClick={()=>router.push("/contact")} variant={"secondary"}>
+                  <IconMail className="h-5 w-5" />
+                  Contact Our Team
+                </RippleButton>
+                <RippleButton variant={"outline"}>
                   Request Technical Documentation
-                </button>
+                </RippleButton>
               </div>
             </motion.div>
           </div>
