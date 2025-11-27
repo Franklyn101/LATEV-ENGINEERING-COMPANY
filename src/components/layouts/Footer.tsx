@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-[#1B1C1E]/95"></div>
 
       {/* CONTENT */}
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
+      <div className="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-12">
 
         {/* TOP SECTION */}
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-12">
