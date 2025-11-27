@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SectionHero } from '../layouts/SectionHero'
+import { Variants } from 'framer-motion'
+
 
 export interface Project {
 id: string
@@ -67,22 +69,31 @@ export default function ProjectsPageContainer() {
     })
   }, [projects, query, activeTag])
 
-  const container = {
-    hidden: { opacity: 0, y: 10 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        staggerChildren: 0.06,
-        when: 'beforeChildren',
-      },
+  const container: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.06,
+      when: "beforeChildren",
     },
-  }
+  },
+}
 
-  const card = {
-    hidden: { opacity: 0, y: 12 },
-    show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 140, damping: 18 } },
-  }
+ const card: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 140,
+      damping: 18,
+    },
+  },
+}
+
 
   return (
     <main className="min-h-screen ">
