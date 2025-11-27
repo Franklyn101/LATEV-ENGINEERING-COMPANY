@@ -8,18 +8,18 @@ import { Variants } from 'framer-motion'
 
 
 export interface Project {
-id: string
-title: string
-location: string
-year: number
-tags: string[]
-description: string
-image: string
+  id: string
+  title: string
+  location: string
+  year: number
+  tags: string[]
+  description: string
+  image: string
 }
 export default function ProjectsPageContainer() {
   const [query, setQuery] = useState('')
   const [activeTag, setActiveTag] = useState('All')
- const [selected, setSelected] = useState<Project | null>(null)
+  const [selected, setSelected] = useState<Project | null>(null)
 
 
   const projects: Project[] = useMemo(() => [
@@ -56,7 +56,7 @@ export default function ProjectsPageContainer() {
       image:
         '/images/siteimages/photo_2024-01-07 12.59.35.jpeg',
     },
-   
+
   ], [])
 
 
@@ -70,39 +70,39 @@ export default function ProjectsPageContainer() {
   }, [projects, query, activeTag])
 
   const container: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.06,
-      when: "beforeChildren",
+    hidden: { opacity: 0, y: 10 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.06,
+        when: "beforeChildren",
+      },
     },
-  },
-}
+  }
 
- const card: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 140,
-      damping: 18,
+  const card: Variants = {
+    hidden: { opacity: 0, y: 12 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 140,
+        damping: 18,
+      },
     },
-  },
-}
+  }
 
 
   return (
     <main className="min-h-screen ">
-        <SectionHero 
-         title="Here are some of our projects in Nigeria."
+      <SectionHero
+        title="Here are some of our projects in Nigeria."
         subtitle="We're here to help and answer any questions you might have"
         imageUrl="/images/contact-hero.png"
         overlayOpacity={0.6}
-        />
+      />
       <section className="max-w-6xl p-2 pt-40 mx-auto">
         <AnimatePresence>
           {selected && (
@@ -187,7 +187,7 @@ export default function ProjectsPageContainer() {
                   style={{ objectFit: 'cover' }}
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
               <div className="p-4 md:p-6">
@@ -216,7 +216,7 @@ export default function ProjectsPageContainer() {
           )}
         </motion.section>
 
-       
+
       </section>
     </main>
   )

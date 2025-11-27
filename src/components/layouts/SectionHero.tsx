@@ -56,7 +56,7 @@ export const SectionHero: React.FC<SectionHeroProps> = ({
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
+            transition={{ delay: 1, duration: 0.8 }}
             className="text-xl md:text-2xl lg:text-3xl font-light text-gray-200"
           >
             {subtitle}
