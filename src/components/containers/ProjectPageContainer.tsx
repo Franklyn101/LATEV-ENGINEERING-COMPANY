@@ -17,7 +17,8 @@ image: string
 export default function ProjectsPageContainer() {
   const [query, setQuery] = useState('')
   const [activeTag, setActiveTag] = useState('All')
-  const [selected, setSelected] = useState(null)
+ const [selected, setSelected] = useState<Project | null>(null)
+
 
   const projects: Project[] = useMemo(() => [
     {
