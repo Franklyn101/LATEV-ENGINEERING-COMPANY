@@ -1,4 +1,6 @@
 "use client";
+import Link from "next/link";
+import router from "next/router";
 import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
@@ -7,16 +9,19 @@ export default function Hero() {
       video: "/videos/weilding.mp4",
       title: "Building the Future, Transforming Communities",
       button: "Explore Our Work",
+      link: "/services"
     },
     {
       video: "/videos/riging.mp4",
       title: "Engineering Excellence Across Nigeria",
       button: "Our Projects",
+      link: "/projects"
     },
     {
       video: "/videos/building.mp4",
       title: "Innovating for a Better Tomorrow",
       button: "Learn More",
+      link: "/about"
     },
   ];
 
@@ -90,13 +95,19 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 mt-10">
             {/* Animated Hero Button */}
-            <button className="relative text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold text-white border border-brand-red">
+            <Link href={slides[current].link}>
+            <button className="relative cursor-pointer text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold text-white border border-brand-red"
+           >
               {slides[current].button}
+              
+              {/* {slides[current].link} */}
+              
               <span
                 className={`absolute inset-0 bg-brand-red transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
                   }`}
               ></span>
             </button>
+            </Link>
           </div>
         </div>
       </div>
