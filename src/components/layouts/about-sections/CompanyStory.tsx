@@ -17,7 +17,7 @@ const CompanyStory = () => {
       ref={ref}
       initial="initial"
       animate={inView ? "animate" : "initial"}
-      className="py-20 px-4 sm:px-6 lg:px-8"
+      className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -25,7 +25,7 @@ const CompanyStory = () => {
             variants={fadeInUp}
             className="relative"
           >
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
+            <div className="bg-white rounded-2xl p-4 md:p-6 lg:p-8 border border-gray-200 shadow-lg">
               <div className="w-full h-64 bg-linear-to-br from-brand-red/10 to-red-600/10 rounded-xl mb-6 flex items-center justify-center">
                 <span className="text-gray-500 text-lg">Company Headquarters Image</span>
               </div>
