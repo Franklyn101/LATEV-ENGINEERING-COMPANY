@@ -20,7 +20,7 @@ export const SectionHero: React.FC<SectionHeroProps> = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="relative h-64 lg:h-[400px] w-full"
+      className="relative h-[550px] lg:h-[700px] w-full"
     >
       {/* Background Image with Overlay */}
       <div 
