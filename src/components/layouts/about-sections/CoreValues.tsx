@@ -88,17 +88,17 @@ const CoreValues = () => {
       </motion.section>
       <motion.div
         animate={{
+          rotate: -360,
+          transition: { duration: 25, repeat: Infinity, ease: "linear" }
+        }}
+        className="absolute -top-1/4 -right-1/12 w-96 h-96 bg-red-400/20 rounded-full blur-3xl"
+      />
+      <motion.div
+        animate={{
           rotate: 360,
           transition: { duration: 20, repeat: Infinity, ease: "linear" }
         }}
         className="absolute -bottom-40 left-1/4 w-64 h-64 bg-red-400/20 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{
-          rotate: -360,
-          transition: { duration: 25, repeat: Infinity, ease: "linear" }
-        }}
-        className="absolute -top-1/2 right-0 w-96 h-96 bg-red-400/20 rounded-full blur-3xl"
       />
     </div>
   );
