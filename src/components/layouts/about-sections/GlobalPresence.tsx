@@ -17,19 +17,19 @@ const GlobalPresence = () => {
       ref={ref}
       initial="initial"
       animate={inView ? "animate" : "initial"}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
+      className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white"
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2
           variants={fadeInUp}
-          className="text-3xl md:text-4xl font-bold mb-16 text-center text-gray-900"
+          className="text-3xl md:text-4xl font-bold mb-10 lg:mb-16 text-center text-gray-900"
         >
           Global Presence
         </motion.h2>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             variants={fadeInUp}
-            className="bg-linear-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100 shadow-lg"
+            className="bg-linear-to-br from-blue-50 to-white rounded-2xl p-4 md:p-6 lg:p-8 border border-blue-100 shadow-lg"
           >
             <div className="w-full h-64 bg-linear-to-br from-brand-red/10 to-red-600/10 rounded-xl mb-6 flex items-center justify-center">
               <span className="text-gray-500 text-lg">World Map with Office Locations</span>

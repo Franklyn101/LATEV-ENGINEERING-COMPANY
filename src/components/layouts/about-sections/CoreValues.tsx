@@ -43,7 +43,7 @@ const CoreValues = () => {
         initial="initial"
         animate={inView ? "animate" : "initial"}
         id="block-icons"
-        className="container mx-auto py-12 rounded-lg"
+        className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white"
       >
         <div className="text-left mb-8">
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4 text-neutral-900">

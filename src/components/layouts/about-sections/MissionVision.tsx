@@ -22,7 +22,7 @@ const MissionVision = () => {
       <div className="max-w-7xl mx-auto">
         <motion.h2
           variants={fadeInUp}
-          className="text-3xl md:text-4xl font-bold mb-10 lg:mb-16 text-center text-gray-900"
+          className="text-3xl md:text-4xl font-serif font-bold mb-10 lg:mb-16 text-center text-gray-900"
         >
           Our Mission & Vision
         </motion.h2>

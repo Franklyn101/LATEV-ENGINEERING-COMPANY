@@ -40,7 +40,7 @@ const CompanyStory = () => {
           <motion.div
             variants={fadeInUp}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-8 text-gray-900">
               Our Story
             </h2>
             <div className="space-y-6 text-lg text-gray-600">

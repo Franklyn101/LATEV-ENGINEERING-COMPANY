@@ -80,12 +80,12 @@ const LeadershipTeam = () => {
       ref={ref}
       initial="initial"
       animate={inView ? "animate" : "initial"}
-      className="py-20 px-4 sm:px-6 lg:px-8"
+      className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2
           variants={fadeInUp}
-          className="text-3xl md:text-4xl font-bold mb-16 text-center text-gray-900"
+          className="text-3xl md:text-4xl font-bold mb-10 lg:mb-16 text-center text-gray-900"
         >
           Leadership Team
         </motion.h2>
