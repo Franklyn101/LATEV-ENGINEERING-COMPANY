@@ -17,19 +17,19 @@ const MissionVision = () => {
       ref={ref}
       initial="initial"
       animate={inView ? "animate" : "initial"}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
+      className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white"
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2
           variants={fadeInUp}
-          className="text-3xl md:text-4xl font-bold mb-16 text-center text-gray-900"
+          className="text-3xl md:text-4xl font-bold mb-10 lg:mb-16 text-center text-gray-900"
         >
           Our Mission & Vision
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-8">
           <motion.div
             variants={fadeInUp}
-            className="bg-linear-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100 shadow-lg"
+            className="bg-linear-to-br from-blue-50 to-white rounded-2xl p-4 md:p-6 lg:p-8 border border-blue-100 shadow-lg"
           >
             <div className="text-4xl mb-4">🎯</div>
             <h3 className="text-2xl font-bold mb-4 text-brand-red">Our Mission</h3>
@@ -42,7 +42,7 @@ const MissionVision = () => {
 
           <motion.div
             variants={fadeInUp}
-            className="bg-linear-to-br from-red-50 to-white rounded-2xl p-8 border border-red-100 shadow-lg"
+            className="bg-linear-to-br from-red-50 to-white rounded-2xl p-4 md:p-6 lg:p-8 border border-red-100 shadow-lg"
           >
             <div className="text-4xl mb-4">🔭</div>
             <h3 className="text-2xl font-bold mb-4 text-brand-red">Our Vision</h3>
