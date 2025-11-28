@@ -17,22 +17,22 @@ const CoreValues = () => {
     {
       title: "TRUST",
       description: "Our relationships are built on trust and honesty. We are relied upon to do the 'right' thing and to do what we say we will do.",
-      icon: "/icons/globe.svg"
+      icon: "/icons/trust.svg"
     },
     {
       title: "EXCELLENCE",
       description: "We are passionate about delivering excellence in all that we do. We are relentless in our pursuit to be the best and continuously improve.",
-      icon: "/icons/globe.svg"
+      icon: "/icons/excellence.svg"
     },
     {
       title: "ACCOUNTABILITY",
       description: "We own and take full responsibility for the work that we do. We have truly open and honest conversations to ensure we deliver the best results for our clients.",
-      icon: "/icons/globe.svg"
+      icon: "/icons/accountability.svg"
     },
     {
       title: "MOMENTUM",
       description: "We act at pace; always moving forward. We are energetic and resilient in the face of adversity and solve problems as a team.",
-      icon: "/icons/globe.svg"
+      icon: "/icons/momentum.svg"
     }
   ];
 
@@ -62,10 +62,8 @@ const CoreValues = () => {
             <motion.div
               key={index}
               variants={fadeInUp}
-              whileHover={{ scale: 1.02 }}
-              className="flex flex-col items-center p-6 bg-white transition-shadow hover:shadow-lg rounded-lg"
+              className="flex flex-col items-center p-6 bg-white rounded-lg"
             >
-              {/* Image */}
               <picture>
                 <Image
                   src={value.icon}
@@ -77,12 +75,10 @@ const CoreValues = () => {
                 />
               </picture>
 
-              {/* Title */}
               <h3 className="text-2xl font-bold text-primary-900 mt-4">
                 {value.title}
               </h3>
 
-              {/* Description */}
               <p className="text-base text-primary-600 mt-2">
                 {value.description}
               </p>
