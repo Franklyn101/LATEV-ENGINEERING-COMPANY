@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 const CoreValues = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -14,57 +15,82 @@ const CoreValues = () => {
 
   const values = [
     {
-      title: "Innovation",
-      description: "Continuously pushing boundaries in coiled tubing technology",
-      icon: "💡"
+      title: "TRUST",
+      description: "Our relationships are built on trust and honesty. We are relied upon to do the 'right' thing and to do what we say we will do.",
+      icon: "/icons/globe.svg"
     },
     {
-      title: "Safety",
-      description: "Zero compromise on safety standards and environmental protection",
-      icon: "🛡️"
+      title: "EXCELLENCE",
+      description: "We are passionate about delivering excellence in all that we do. We are relentless in our pursuit to be the best and continuously improve.",
+      icon: "/icons/globe.svg"
     },
     {
-      title: "Excellence",
-      description: "Commitment to delivering superior quality in every project",
-      icon: "⭐"
+      title: "ACCOUNTABILITY",
+      description: "We own and take full responsibility for the work that we do. We have truly open and honest conversations to ensure we deliver the best results for our clients.",
+      icon: "/icons/globe.svg"
     },
     {
-      title: "Partnership",
-      description: "Building long-term relationships based on trust and mutual success",
-      icon: "🤝"
+      title: "MOMENTUM",
+      description: "We act at pace; always moving forward. We are energetic and resilient in the face of adversity and solve problems as a team.",
+      icon: "/icons/globe.svg"
     }
   ];
 
   return (
-    <motion.section
-      ref={ref}
-      initial="initial"
-      animate={inView ? "animate" : "initial"}
-      className="py-20 px-4 sm:px-6 lg:px-8"
-    >
-      <div className="max-w-7xl mx-auto">
-        <motion.h2
+    <div className="">
+      <motion.section
+        ref={ref}
+        initial="initial"
+        animate={inView ? "animate" : "initial"}
+        id="block-icons"
+        className="container mx-auto py-12 rounded-lg"
+      >
+        <div className="text-left mb-8">
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4 text-neutral-900">
+            Our Core Values
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-lg md:text-2xl lg:text-2xl text-gray-800 mb-5 lg:mb-8 max-w-2xl">
+            TRUST - EXCELLENCE - ACCOUNTABILITY - MOMENTUM
+          </motion.p>
+        </div>
+
+        <motion.div
           variants={fadeInUp}
-          className="text-3xl md:text-4xl font-bold mb-16 text-center text-gray-900"
+          className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-4 gap-8 text-center"
         >
-          Our Core Values
-        </motion.h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((value, index) => (
             <motion.div
               key={index}
               variants={fadeInUp}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="bg-white rounded-lg p-6 border border-gray-200 hover:border-red-300 hover:shadow-xl hover:shadow-red-200/70 transition-all duration-300 text-center"
+              whileHover={{ scale: 1.02 }}
+              className="flex flex-col items-center p-6 bg-white transition-shadow hover:shadow-lg rounded-lg"
             >
-              <div className="text-3xl mb-4">{value.icon}</div>
-              <h3 className="text-xl font-bold mb-3 text-brand-red">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
+              {/* Image */}
+              <picture>
+                <Image
+                  src={value.icon}
+                  alt={value.title}
+                  width={110}
+                  height={110}
+                  className="w-28 h-auto object-cover"
+                  loading="lazy"
+                />
+              </picture>
+
+              {/* Title */}
+              <h3 className="text-2xl font-bold text-primary-900 mt-4">
+                {value.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-base text-primary-600 mt-2">
+                {value.description}
+              </p>
             </motion.div>
           ))}
-        </div>
-      </div>
-    </motion.section>
+        </motion.div>
+      </motion.section>
+    </div>
   );
 };
 
