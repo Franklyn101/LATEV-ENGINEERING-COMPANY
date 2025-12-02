@@ -17,7 +17,10 @@ const AboutUs = () => {
     <div className="min-h-screen">
       <SectionHero
         title="About Latev Engineering"
-        subtitle="Pioneering Excellence in Coiled Tubing Solutions for Over a Decade"
+        subtitle="Latev Engineering Company Limited commits itself to providing safe, efficient, high-quality operations by using advanced and
+                  reliable equipment operated by first class people.
+                  We operate a comprehensive service base here in Nigeria. Our services are provided all across the industry with offices in
+                  Warri and P.H and Head office in Lagos."
         imageUrl="/images/about-hero.svg"
         overlayOpacity={0.7}
       />

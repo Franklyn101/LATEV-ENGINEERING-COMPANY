@@ -34,9 +34,9 @@ const MissionVision = () => {
             <div className="text-4xl mb-4">🎯</div>
             <h3 className="text-2xl font-bold mb-4 text-brand-red">Our Mission</h3>
             <p className="text-gray-600 text-lg">
-              To deliver innovative, reliable, and efficient coiled tubing solutions that empower
-              our clients to maximize well productivity while ensuring operational safety and
-              environmental responsibility.
+             As an indigenous company, our mission is to have excellent work and consistently exceed expectation
+             of those we serve in the oil and construction industry by ensuring positive quality of our job also putting
+             into consideration health safety and environment as our first priority
             </p>
           </motion.div>
 
@@ -47,8 +47,8 @@ const MissionVision = () => {
             <div className="text-4xl mb-4">🔭</div>
             <h3 className="text-2xl font-bold mb-4 text-brand-red">Our Vision</h3>
             <p className="text-gray-600 text-lg">
-              To be the global leader in coiled tubing technology, setting new standards for
-              innovation, safety, and sustainability in well intervention operations worldwide.
+              Our vision is to create a leading world class company that provides intergrated engineering,construction,
+              dredging & procurement services through innovative ideas
             </p>
           </motion.div>
         </div>

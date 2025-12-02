@@ -29,8 +29,7 @@ const CTASection = () => {
           variants={fadeInUp}
           className="text-xl text-red-100 mb-12 leading-relaxed"
         >
-          Join the growing list of energy companies that trust Latev Engineering for their
-          coiled tubing needs. Contact us today to discuss how we can optimize your operations.
+          Join the growing list of energy companies that trust Latev Engineering. Contact us today to discuss how we can optimize your operations.
         </motion.p>
         <motion.div
           variants={fadeInUp}

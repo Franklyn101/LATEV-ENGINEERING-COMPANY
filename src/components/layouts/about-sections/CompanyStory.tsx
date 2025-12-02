@@ -31,8 +31,9 @@ const CompanyStory = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-brand-red">Our Foundation</h3>
               <p className="text-gray-600">
-                Established with a vision to revolutionize coiled tubing technology, Latev Engineering
-                has grown from a local startup to an international leader in well intervention solutions.
+               We are a company that prides itself on doing business in an ethical and honest way. The employees that have been with us
+               over the years along with those that have more recently joined our team all share this view. Our philosophy on doing business
+               has helped create a company whose field performance is second to none in the industry.
               </p>
             </div>
           </motion.div>
