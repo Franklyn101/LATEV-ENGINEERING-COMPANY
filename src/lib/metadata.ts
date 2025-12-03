@@ -9,7 +9,7 @@ interface MetaProps {
 }
 
 const SITE_NAME = "Latev Engineering Services Ltd";
-const SITE_URL = "https://latevengineering.com";
+const SITE_URL = "https://latevengineering.com"; // TODO: Replace with your actual site URL
 const DEFAULT_OG_IMAGE = "/images/logo.jpeg";
 
 export function createMetadata({

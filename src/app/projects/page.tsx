@@ -2,7 +2,7 @@ import ProjectPageContainer from '@/components/containers/ProjectPageContainer'
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: "Projects – Latev Engineering Services Ltd",
+  title: "Projects",
   description:
     "Explore the portfolio of Latev Engineering Services Ltd, showcasing our engineering, oilfield, and construction projects across Nigeria. Discover our expertise in coiled tubing solutions, well interventions, and industrial engineering projects.",
   keywords: [

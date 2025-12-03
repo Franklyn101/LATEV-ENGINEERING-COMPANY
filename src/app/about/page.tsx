@@ -2,7 +2,7 @@ import AboutPageContainer from "@/components/containers/AboutPageContainer";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "About Us – Latev Engineering Services Ltd",
+  title: "About Us",
   description:
     "Learn about Latev Engineering Services Ltd, a leading provider of engineering, oilfield, and construction solutions across Nigeria. Discover our mission, values, and commitment to excellence.",
   keywords: [

@@ -2,7 +2,7 @@ import FAQPageContainer from "@/components/containers/FAQPageContainer";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "FAQ – Latev Engineering Services Ltd",
+  title: "FAQ",
   description:
     "Find answers to common questions about Latev Engineering Services Ltd, including our engineering, oilfield, and construction services, project processes, and client support.",
   keywords: [

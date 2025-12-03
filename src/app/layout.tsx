@@ -27,7 +27,7 @@ const inter = Inter({
 });
 
 export const metadata = createMetadata({
-  title: "Latev Engineering Services Ltd – Coiled Tubing Downhole Tools",
+  title: "Home",
   description:
   "Latev Engineering Services Ltd delivers world-class construction, oilfield, and industrial engineering solutions.",
 });

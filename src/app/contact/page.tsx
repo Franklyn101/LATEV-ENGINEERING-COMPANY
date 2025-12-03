@@ -2,7 +2,7 @@ import ModernContactPage from "@/components/containers/ContactPageContainer";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Contact Us – Latev Engineering Services Ltd",
+  title: "Contact Us",
   description:
     "Get in touch with Latev Engineering Services Ltd for professional oilfield services, coiled tubing solutions, and engineering support. Reach our team for inquiries, project consultations, or partnership opportunities.",
   keywords: [
