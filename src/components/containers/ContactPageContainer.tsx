@@ -15,11 +15,9 @@ export default function ModernContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Validation function
   const isFormValid = () => {
     const { name, email, subject, message } = formData;
 
-    // Basic validation
     const isNameValid = name.trim().length >= 2;
     const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const isSubjectValid = subject.trim().length >= 3;
@@ -32,46 +30,37 @@ export default function ModernContactPage() {
     e.preventDefault();
 
     if (!isFormValid()) {
-      toast.error('Please fill all fields correctly', {
-        description: 'All fields are required and must meet validation criteria.',
-        duration: 5000,
+      toast.error("Please check all fields", {
+        description: "Some fields are invalid or incomplete.",
       });
       return;
     }
 
     setIsSubmitting(true);
 
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // TODO: Add correct mail address
+      const mailtoLink = `mailto:info@latevengineering.com?subject=${encodeURIComponent(
+        formData.subject
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
 
-      // Simulate successful submission
-      console.log('Form submitted:', formData);
+      window.location.href = mailtoLink;
 
-      // Show success toast
-      toast.success('Message sent successfully!', {
-        description: 'We will get back to you within 24 hours.',
-        duration: 5000,
-      });
-
-      // Reset form
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      toast.success("Opening your email app...");
+      
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      
     } catch (error) {
-      // Show error toast
-      toast.error('Failed to send message', {
-        description: 'Please try again later.',
-        duration: 5000,
-      });
+      toast.error("Something went wrong");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -83,10 +72,10 @@ export default function ModernContactPage() {
         overlayOpacity={0.6}
       />
 
-      {/* Contact Content */}
       <div className="min-h-screen lg:mt-8 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-20">
+            
             <ContactInformation />
 
             <ContactForm
