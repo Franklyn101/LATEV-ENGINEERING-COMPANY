@@ -57,7 +57,7 @@ export const SectionHero: React.FC<SectionHeroProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="text-xl md:text-2xl lg:text-3xl font-light text-gray-200 md:leading-snug"
+            className="text-xl md:text-2xl lg:text-3xl font-light text-gray-200 md:leading-snug tracking-wide"
           >
             {subtitle}
           </motion.p>
