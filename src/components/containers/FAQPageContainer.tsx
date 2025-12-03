@@ -16,6 +16,7 @@ import {
 import { SectionHero } from '../layouts/SectionHero';
 import { RippleButton } from '../shared/button';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 interface FAQItem {
   id: number;
@@ -170,22 +171,22 @@ export default function EngineeringFAQPage() {
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
                     className={`w-full text-left px-3 py-3 rounded-lg transition-all duration-200 flex justify-between items-center group ${activeCategory === category.id
-                        ? 'bg-red-50 text-brand-red border border-red-200'
-                        : 'text-gray-700 hover:bg-gray-50 hover:border-gray-200 border border-transparent'
+                      ? 'bg-red-50 text-brand-red border border-red-200'
+                      : 'text-gray-700 hover:bg-gray-50 hover:border-gray-200 border border-transparent'
                       }`}
                   >
                     <div className="flex items-center space-x-3">
                       <div className={`${activeCategory === category.id
-                          ? 'text-brand-red'
-                          : 'text-gray-400 group-hover:text-brand-red'
+                        ? 'text-brand-red'
+                        : 'text-gray-400 group-hover:text-brand-red'
                         }`}>
                         {category.icon}
                       </div>
                       <span className="font-medium">{category.name}</span>
                     </div>
                     <span className={`text-sm px-2 py-1 rounded-full ${activeCategory === category.id
-                        ? 'bg-brand-red text-white'
-                        : 'bg-gray-100 text-gray-600 group-hover:bg-red-100 group-hover:text-brand-red'
+                      ? 'bg-brand-red text-white'
+                      : 'bg-gray-100 text-gray-600 group-hover:bg-red-100 group-hover:text-brand-red'
                       }`}>
                       {category.count}
                     </span>
@@ -302,13 +303,15 @@ export default function EngineeringFAQPage() {
                 Our technical experts are ready to provide detailed information about our Coiled Tubing Downhole Tools and how they can benefit your operations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <RippleButton onClick={()=>router.push("/contact")} variant={"secondary"}>
+                <RippleButton onClick={() => router.push("/contact")} variant={"secondary"}>
                   <IconMail className="h-5 w-5" />
                   Contact Our Team
                 </RippleButton>
-                <RippleButton variant={"outline"}>
-                  Request Technical Documentation
-                </RippleButton>
+                <Link href="/Latev Engineering Company Brochure.pdf" download={"/Latev Engineering Company Brochure.pdf"} target="_blank" rel="noopener noreferrer">
+                  <RippleButton variant={"outline"}>
+                    Request Technical Documentation
+                  </RippleButton>
+                </Link>
               </div>
             </motion.div>
           </div>

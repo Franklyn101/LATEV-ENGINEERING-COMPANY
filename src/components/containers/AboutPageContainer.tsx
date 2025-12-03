@@ -4,7 +4,7 @@ import Benefits from "../layouts/about-sections/Benefits";
 import Certifications from "../layouts/about-sections/Certifications";
 import CompanyStory from "../layouts/about-sections/CompanyStory";
 import CoreValues from "../layouts/about-sections/CoreValues";
-import CTASection from "../layouts/about-sections/CTASection";
+import CTASection from "../layouts/CTASection";
 import GlobalPresence from "../layouts/about-sections/GlobalPresence";
 import LeadershipTeam from "../layouts/about-sections/LeadershipTeam";
 import MissionVision from "../layouts/about-sections/MissionVision";

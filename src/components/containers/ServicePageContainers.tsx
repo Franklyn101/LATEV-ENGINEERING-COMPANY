@@ -1,4 +1,5 @@
 
+import CTASection from '../layouts/CTASection'
 import { SectionHero } from '../layouts/SectionHero'
 import ServiceSection from '../layouts/ServiceSection'
 
@@ -14,6 +15,7 @@ export default function ServicePageContainers() {
       <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans">
         <ServiceSection />
       </div>
+      <CTASection />
     </div>
   )
 }

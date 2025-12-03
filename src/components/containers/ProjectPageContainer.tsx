@@ -5,6 +5,7 @@ import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SectionHero } from '../layouts/SectionHero'
 import { Variants } from 'framer-motion'
+import CTASection from '../layouts/CTASection'
 
 
 export interface Project {
@@ -103,7 +104,7 @@ export default function ProjectsPageContainer() {
         imageUrl="/images/contact-hero.png"
         overlayOpacity={0.6}
       />
-      <section className="max-w-6xl p-2 pt-40 mx-auto">
+      <section className="max-w-6xl p-2 py-12 lg:py-16 mx-auto">
         <AnimatePresence>
           {selected && (
             <motion.div
@@ -218,6 +219,7 @@ export default function ProjectsPageContainer() {
 
 
       </section>
+      <CTASection />
     </main>
   )
 }
