@@ -10,7 +10,7 @@ interface MetaProps {
 
 const SITE_NAME = "Latev Engineering Services Ltd";
 const SITE_URL = "https://latevengineering.com";
-const DEFAULT_OG_IMAGE = "/og-image.png";
+const DEFAULT_OG_IMAGE = "/images/logo.jpeg";
 
 export function createMetadata({
   title,
@@ -34,7 +34,7 @@ export function createMetadata({
     icons: {
       icon: "/images/logo-self.png",
       shortcut: "/images/logo-self.png",
-      apple: "/apple-touch-icon.png",
+      apple: "/images/logo-self.png",
     },
 
     keywords: [
