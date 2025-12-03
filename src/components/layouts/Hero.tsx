@@ -61,7 +61,7 @@ export default function Hero() {
   }, [current, activeVideo]);
 
   return (
-    <section className="relative h-screen w-full flex items-center md:pl-10 lg:pl-20 overflow-hidden">
+    <section className="relative min-h-[600px] h-screen w-full flex items-center md:pl-10 lg:pl-20 overflow-hidden">
       {/* VIDEO A */}
       <video
         ref={videoA}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { createMetadata } from "@/lib/metadata";
-import ClientLayout from "./ClientLayout"; 
+import ClientLayout from "../components/containers/ClientLayout"; 
 import "./globals.css";
 
 export const metadata: Metadata = createMetadata({
