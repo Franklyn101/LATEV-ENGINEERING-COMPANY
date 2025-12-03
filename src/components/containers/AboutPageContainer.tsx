@@ -17,10 +17,7 @@ const AboutUs = () => {
     <div className="min-h-screen">
       <SectionHero
         title="About Latev Engineering"
-        subtitle="Latev Engineering Company Limited commits itself to providing safe, efficient, high-quality operations by using advanced and
-                  reliable equipment operated by first class people.
-                  We operate a comprehensive service base here in Nigeria. Our services are provided all across the industry with offices in
-                  Warri and P.H and Head office in Lagos."
+        subtitle="Latev Engineering delivers safe, efficient, and high-quality operations through advanced equipment and skilled professionals, serving the industry from our bases in Warri, Port Harcourt, and Lagos."
         imageUrl="/images/about-hero.svg"
         overlayOpacity={0.7}
       />
