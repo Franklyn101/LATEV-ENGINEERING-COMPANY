@@ -87,7 +87,7 @@ const LeadershipTeam = () => {
           variants={fadeInUp}
           className="text-3xl md:text-4xl font-bold mb-10 lg:mb-16 text-center text-gray-900"
         >
-          Leadership Team
+          Management
         </motion.h2>
 
         {/* Scroll Controls */}

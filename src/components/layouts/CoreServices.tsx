@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 
@@ -12,6 +12,13 @@ const CoreServices = () => {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6, ease: "easeOut" }
+  };
+
+  const expandAnimation = {
+    initial: { height: 0, opacity: 0 },
+    animate: { height: "auto", opacity: 1 },
+    exit: { height: 0, opacity: 0 },
+    transition: { duration: 0.35, ease: "easeInOut" }
   };
 
   const productCategories = [
@@ -53,7 +60,7 @@ const CoreServices = () => {
     }
   ];
 
-  const truncateText = (text: string, maxLength = 120) => {
+  const truncateText = (text, maxLength = 120) => {
     if (text.length <= maxLength) return text;
     return text.slice(0, maxLength) + "...";
   };
@@ -98,11 +105,27 @@ const CoreServices = () => {
                   {product.name}
                 </div>
 
-                <p className="text-gray-600 mb-2">
-                  {expanded
-                    ? product.description
-                    : truncateText(product.description)}
-                </p>
+                <AnimatePresence initial={false}>
+                  {!expanded && (
+                    <motion.p
+                      key="collapsed"
+                      {...expandAnimation}
+                      className="text-gray-600 mb-2"
+                    >
+                      {truncateText(product.description)}
+                    </motion.p>
+                  )}
+
+                  {expanded && (
+                    <motion.p
+                      key="expanded"
+                      {...expandAnimation}
+                      className="text-gray-600 mb-2"
+                    >
+                      {product.description}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
 
                 <button
                   onClick={() => setExpanded(!expanded)}
