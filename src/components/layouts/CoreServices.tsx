@@ -59,11 +59,11 @@ const CoreServices = () => {
         "Latev Engineering Company Limited can carry out asphalt and concrete paving for road construction. We are able to perform the majority of the associated works such as water mains, sewers, culvert repairs, earthworks, concrete sidewalks, and curbs and gutters."
     }
   ];
+const truncateText = (text: string, maxLength: number = 120): string => {
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength) + "...";
+};
 
-  const truncateText = (text, maxLength = 120) => {
-    if (text.length <= maxLength) return text;
-    return text.slice(0, maxLength) + "...";
-  };
 
   return (
     <motion.section
