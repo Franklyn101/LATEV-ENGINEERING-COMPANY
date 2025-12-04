@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, easeInOut, easeOut } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 
@@ -9,17 +9,19 @@ const CoreServices = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
-  };
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: easeOut }
+};
+
 
   const expandAnimation = {
-    initial: { height: 0, opacity: 0 },
-    animate: { height: "auto", opacity: 1 },
-    exit: { height: 0, opacity: 0 },
-    transition: { duration: 0.35, ease: "easeInOut" }
-  };
+  initial: { height: 0, opacity: 0 },
+  animate: { height: "auto", opacity: 1 },
+  exit: { height: 0, opacity: 0 },
+  transition: { duration: 0.35, ease: easeInOut }
+};
+
 
   const productCategories = [
     {
