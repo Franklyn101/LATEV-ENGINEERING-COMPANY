@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 const ProductsServices = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -15,22 +16,27 @@ const ProductsServices = () => {
   const productCategories = [
     {
       name: "Connectors",
+      image: "/images/siteimages/connector.jpg",
       description: "High-integrity mechanical solutions for connecting coiled tubing to tools or splicing segments"
     },
     {
       name: "Basic Tools",
+      image: "/images/siteimages/basuc.jpg",
       description: "Tools that improve operational control, tool string functionality, and wellbore cleaning"
     },
     {
       name: "Bridge Plugs",
+      image: "/images/siteimages/bridge.jpg",
       description: "Reliable solutions for wellbore isolation during interventions"
     },
     {
       name: "Fishing Tools",
+      image: "/images/siteimages/fishingtool.jpg",
       description: "Precision-engineered tools for retrieval of lost or stuck equipment"
     },
     {
       name: "Mills & Impression Tools",
+      image: "/images/siteimages/mill.jpg",
       description: "Effective solutions for milling obstructions and identifying downhole features"
     }
   ];
@@ -58,7 +64,13 @@ const ProductsServices = () => {
               className="bg-linear-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 shadow-lg hover:border-brand-red/30 transition-all duration-300"
             >
               <div className="w-full h-32 bg-linear-to-br from-brand-red/10 to-red-600/10 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-gray-500 font-medium">{product.name} Image</span>
+                 <Image
+                                    alt={product.name}
+                                    src={product.image}
+                                    width={720}
+                                    height={150}
+                                    className=" h-32 w-full  object-cover"
+                                  />
               </div>
               <div className="text-brand-red text-lg font-semibold mb-3">
                 {product.name}
