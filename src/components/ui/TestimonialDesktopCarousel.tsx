@@ -38,10 +38,10 @@ export default function TestimonialDesktopCarousel({
                 className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-300 h-full flex flex-col"
               >
                 <div className="mb-4">
-                  <Quote className="w-8 h-8 text-[#db251e]" />
+                  <Quote className="w-8 h-8 text-brand-red" />
                 </div>
 
-                <p className="text-gray-700 mb-6 leading-relaxed flex-grow">
+                <p className="text-gray-700 mb-6 leading-relaxed grow">
                   "{testimonial.content}"
                 </p>
 
@@ -53,7 +53,7 @@ export default function TestimonialDesktopCarousel({
                     <span className="text-gray-600 text-sm">
                       {testimonial.position}
                     </span>
-                    <span className="text-[#db251e] font-medium text-sm">
+                    <span className="text-brand-red font-medium text-sm">
                       {testimonial.company}
                     </span>
                   </div>
@@ -79,7 +79,7 @@ export default function TestimonialDesktopCarousel({
         <button
           onClick={onPrevSlide}
           disabled={isAnimating}
-          className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-300 hover:border-[#db251e] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+          className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-300 hover:border-brand-red disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
           aria-label="Previous testimonials"
         >
           <ChevronLeft className="w-5 h-5 text-gray-700" />
@@ -94,7 +94,7 @@ export default function TestimonialDesktopCarousel({
         <button
           onClick={onNextSlide}
           disabled={isAnimating}
-          className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-300 hover:border-[#db251e] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+          className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-300 hover:border-brand-red disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
           aria-label="Next testimonials"
         >
           <ChevronRight className="w-5 h-5 text-gray-700" />

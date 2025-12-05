@@ -13,7 +13,7 @@ export const metadata = createMetadata({
     "client support",
     "project inquiries"
   ],
-  url: "https://latevengineering.com/faq",
+  url: "https://latev-engineering.com/faq",
   image: "/images/faq-og.png",
 });
 

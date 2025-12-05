@@ -13,7 +13,7 @@ export const metadata = createMetadata({
     "company mission and vision",
     "industrial engineering"
   ],
-  url: "https://latevengineering.com/about",
+  url: "https://latev-engineering.com/about",
   image: "/images/about-og.png",
 });
 
