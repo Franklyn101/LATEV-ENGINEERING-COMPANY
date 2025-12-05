@@ -26,7 +26,7 @@ const AboutUs = () => {
       <CoreValues />
       <HeroBanner />
       <ProductsServices />
-      <LeadershipTeam />
+      {/* <LeadershipTeam /> */}
       <Certifications />
       <Benefits />
       <GlobalPresence />
