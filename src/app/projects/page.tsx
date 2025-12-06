@@ -17,7 +17,7 @@ export const metadata = createMetadata({
     "project consultations",
     "Latev Engineering services"
   ],
-  url: "https://latev-engineering.com/projects",
+  url: "https://latevengineering.com/projects",
   image: "/images/projects-og.png",
 });
 
