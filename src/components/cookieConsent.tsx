@@ -24,7 +24,6 @@ export default function CookieConsent() {
   };
 
   const decline = () => {
-    // optionally set a decline cookie, or just close banner
     setVisible(false);
   };
 
@@ -36,23 +35,17 @@ export default function CookieConsent() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.35 }}
-          className="fixed bottom-6 left-4 right-4 md:left-auto md:right-6 lg:right-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-50"
+          className="fixed bottom-0 md:bottom-4 md:right-4 p-4 pb-6 lg:p-6 md:rounded-lg shadow-xl bg-white border border-gray-200 dark:border-gray-700 z-50 w-full max-w-md"
         >
-          <h2 className="text-lg font-sans font-semibold mb-2">We Value Your Privacy</h2>
-          <p className="text-sm mb-4 font-serif">
+          <h2 className="text-xl font-serif font-bold mb-2">We Value Your Privacy</h2>
+          <p className="text-sm lg:text-base mb-4 font-sans text-neutral-700">
             We use cookies to give you the best browsing experience, to analyse site traffic, and to personalise content. Manage your preferences or accept cookies to continue.
           </p>
           <div className="flex flex-col sm:flex-row justify-end gap-3">
-            <RippleButton
-              onClick={decline}
-              className="px-4 py-2 bg-transparent font-serif border border-gray-500 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-            >
+            <RippleButton variant={"outline"} onClick={decline}>
               Decline
             </RippleButton>
-            <RippleButton
-              onClick={accept}
-              className="px-4 py-2 bg-brand-red font-serif text-white rounded-md transition"
-            >
+            <RippleButton onClick={accept}>
               Accept
             </RippleButton>
           </div>

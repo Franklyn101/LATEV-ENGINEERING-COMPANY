@@ -13,7 +13,7 @@ export const metadata = createMetadata({
     "well intervention support",
     "Latev Engineering contact"
   ],
-  url: "https://latevengineering.com/contact",
+  url: "https://latev-engineering.com/contact",
   image: "/og-image.png",
 });
 
