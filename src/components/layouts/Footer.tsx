@@ -84,8 +84,7 @@ export default function Footer() {
                 Location
               </h4>
               <p className="text-sm text-gray-300 leading-relaxed">
-                No. 3 Lekki Phase 1 <br />
-                Lagos, Nigeria
+                16B Grace Anjous Drive, Off Adebayo Doherty Street, Off Admiralty Way, Lekki Phase 1, Lagos, Nigeria.
               </p>
             </div>
 

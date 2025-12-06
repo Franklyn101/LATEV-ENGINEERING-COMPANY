@@ -46,23 +46,39 @@ export const ContactInformation: React.FC<ContactInfoProps> = ({
       <div className="space-y-6">
         <ContactInfoItem 
           icon={<IconMail className="h-6 w-6" />}
-          content={<p className="text-gray-900 font-medium">hello@company.com</p>}
+          content={
+          <>
+          <p className="text-gray-900 font-medium">mail.lagos@latevengineering.com</p>
+            <p className="text-gray-900 font-medium">mail.ph@latevengineering.com</p>
+            <p className="text-gray-900 font-medium">mail.warri@latevengineering.com</p>
+            </>
+          }
+          
         />
         
         <ContactInfoItem 
           icon={<IconPhone className="h-6 w-6" />}
           content={
             <>
-              <p className="text-gray-900 font-medium">+(234) 2330-45674</p>
-              <p className="text-gray-900 font-medium">+(234) 9872-65434</p>
-              <p className="text-gray-900 font-medium">+(234) 4561-78903</p>
+              <p className="text-gray-900 font-medium">+234-818-102-2649</p>
+              <p className="text-gray-900 font-medium"> +234- 705-195-7019</p>
+              <p className="text-gray-900 font-medium">+234-705-901-9575</p>
+              <p className="text-gray-900 font-medium"> +234-705-195-7028</p>
             </>
           }
         />
         
         <ContactInfoItem 
           icon={<IconMapPin className="h-6 w-6" />}
-          content={<p className="text-gray-900 font-medium">No. 3 Lekki Phase 1, Lagos, Nigeria</p>}
+          content={
+            <>
+          <p className="text-gray-900 font-medium">16B Grace Anjous Drive, Off Adebayo Doherty Street, Off Admiralty Way, Lekki Phase 1, Lagos, Nigeria.</p>
+          <br></br>
+          <p>4, Agore Close, Off Niemoghe Avenue, Beside PHD Hotel, DDPA Estate, Ugborikoko Effurun, Delta State, Nigeria.</p>
+          <br></br>
+          <p>Plot 224 Iyowuna Drive, off Odili Road Trans Amadi Port-Harcourt, Rivers State, Nigeria.</p>
+          </>
+        }
         />
       </div>
 

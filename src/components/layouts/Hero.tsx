@@ -102,10 +102,10 @@ export default function Hero() {
               
               {/* {slides[current].link} */}
               
-              <span
+              {/* <span
                 className={`absolute inset-0 bg-brand-red transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
                   }`}
-              ></span>
+              ></span> */}
             </button>
             </Link>
           </div>
