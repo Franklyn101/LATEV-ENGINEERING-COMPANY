@@ -32,7 +32,7 @@ const CoreServices = () => {
     },
     {
       name: "Process & Pipeline Services",
-      image: "/images/Pipeline.jpg",
+      image: "/images/pipeline.jpg",
       description:
         "We have a team of qualified and experienced engineers, technicians, operators and technical partners who together can deliver professional expertise and quality service within the specified time and budget. We have a good inventory of all equipment / instruments required for carrying out: pigging, hydro testing, dewatering, drying (using air and nitrogen), nitrogen purging / inerting and nitrogen helium leak testing, and chemical cleaning activities for both offshore and onshore pipeline projects."
     },

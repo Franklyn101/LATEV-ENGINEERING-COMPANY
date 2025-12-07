@@ -5,15 +5,17 @@ import HeroMarquee from '../layouts/HeroMarquee'
 import CoreServices from '../layouts/CoreServices'
 import CTASection from '../layouts/CTASection'
 import Benefits from '../layouts/about-sections/Benefits'
+import StatsSection from '../layouts/StatsSection'
 
 export default function HomePageContainers() {
   return (
     <div>
       <Hero />
       <HeroMarquee />
-      <Testimonial />
+      <StatsSection />
       <HeroBanner />
       <CoreServices />
+      <Testimonial />
       <Benefits />
       <CTASection />
     </div>
