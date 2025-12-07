@@ -9,18 +9,18 @@ const CoreServices = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: easeOut }
-};
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: easeOut }
+  };
 
 
   const expandAnimation = {
-  initial: { height: 0, opacity: 0 },
-  animate: { height: "auto", opacity: 1 },
-  exit: { height: 0, opacity: 0 },
-  transition: { duration: 0.35, ease: easeInOut }
-};
+    initial: { height: 0, opacity: 0 },
+    animate: { height: "auto", opacity: 1 },
+    exit: { height: 0, opacity: 0 },
+    transition: { duration: 0.35, ease: easeInOut }
+  };
 
 
   const productCategories = [
@@ -61,10 +61,10 @@ const CoreServices = () => {
         "Latev Engineering Company Limited can carry out asphalt and concrete paving for road construction. We are able to perform the majority of the associated works such as water mains, sewers, culvert repairs, earthworks, concrete sidewalks, and curbs and gutters."
     }
   ];
-const truncateText = (text: string, maxLength: number = 120): string => {
-  if (text.length <= maxLength) return text;
-  return text.slice(0, maxLength) + "...";
-};
+  const truncateText = (text: string, maxLength: number = 120): string => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + "...";
+  };
 
 
   return (
@@ -75,12 +75,21 @@ const truncateText = (text: string, maxLength: number = 120): string => {
       className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white"
     >
       <div className="max-w-7xl mx-auto">
-        <motion.h2
-          variants={fadeInUp}
-          className="text-3xl md:text-4xl font-bold mb-10 lg:mb-16 text-center text-gray-900"
-        >
-          Our Core Services
-        </motion.h2>
+        <div className="text-center mb-6 lg:mb-12">
+          <motion.h2
+            variants={fadeInUp}
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6 lg:mb-8 text-gray-900"
+          >
+            Our Core Services
+          </motion.h2>
+
+          <motion.p
+            variants={fadeInUp}
+            className="text-base md:text-lg lg:text-xl text-gray-800 max-w-2xl mx-auto"
+          >
+            Explore the wide range of professional solutions we offer to help businesses achieve efficiency, innovation, and long-lasting impact.
+          </motion.p>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {productCategories.map((product, index) => {
