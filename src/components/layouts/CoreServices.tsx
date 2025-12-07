@@ -72,7 +72,7 @@ const CoreServices = () => {
       ref={ref}
       initial="initial"
       animate={inView ? "animate" : "initial"}
-      className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white"
+      className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-white"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-6 lg:mb-12">

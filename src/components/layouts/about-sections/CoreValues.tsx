@@ -56,7 +56,7 @@ const CoreValues = () => {
 
         <motion.div
           variants={fadeInUp}
-          className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-4 gap-8 text-center"
+          className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
         >
           {values.map((value, index) => (
             <motion.div
