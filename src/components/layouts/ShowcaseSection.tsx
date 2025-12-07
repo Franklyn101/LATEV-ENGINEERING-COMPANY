@@ -63,7 +63,7 @@ export default function ShowcaseSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-20"
+          className="grid grid-cols-1 md:grid-cols-2 gap-20"
         >
           {projects.map((p, i) => (
             <motion.div
