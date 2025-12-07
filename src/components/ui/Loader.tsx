@@ -51,8 +51,6 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
               />
             ))}
           </div>
-
-          {/* <p className="mt-4 text-gray-700 font-medium">Loading, please wait...</p> */}
         </motion.div>
       )}
     </AnimatePresence>
