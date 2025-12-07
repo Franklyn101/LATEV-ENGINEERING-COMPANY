@@ -101,7 +101,7 @@ export default function ProjectsPageContainer() {
       <SectionHero
         title="Here are some of our projects in Nigeria."
         subtitle="We're here to help and answer any questions you might have"
-        imageUrl="/images/contact-hero.png"
+        imageUrl="/images/project-hero.jpg"
         overlayOpacity={0.6}
       />
       <section className="max-w-6xl p-2 py-12 lg:py-16 mx-auto">

@@ -44,7 +44,7 @@ export default function Header() {
             alt="Latev Engineering Logo"
             width={160}
             height={48}
-            className="transition-all duration-300"
+            className="transition-all duration-300 max-sm:w-36 object-cover"
           />
         </Link>
 
@@ -90,7 +90,7 @@ export default function Header() {
           onClick={() => setIsOpen(true)}
         >
           <AlignJustify
-            size={30}
+            size={28}
             className={scrolled ? 'text-black' : 'text-white'}
           />
         </button>

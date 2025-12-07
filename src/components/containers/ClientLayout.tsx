@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Header from "@/components/layouts/Header";
-import Footer from "@/components/layouts/Footer";
+import Header from "@/components/ui/Header";
+import Footer from "@/components/ui/Footer";
 import Loader from "@/components/ui/Loader";
 import { Toaster } from "sonner";
 import { Noto_Sans, Noto_Serif, Inter } from "next/font/google";
