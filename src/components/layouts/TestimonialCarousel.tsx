@@ -4,6 +4,7 @@ import { testimonials } from '@/data/testimonials-data';
 import { useState, useEffect, useCallback } from 'react';
 import TestimonialDesktopCarousel from '../ui/TestimonialDesktopCarousel';
 import TestimonialMobileCarousel from '../ui/TestimonialMobileCarousel';
+import TestimonialMediumCarousel from '../ui/TestimonialMediumCarousel';
 
 export default function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,25 +25,25 @@ export default function TestimonialCarousel() {
 
   const nextSlide = useCallback(() => {
     if (isAnimating) return;
-    
+
     setIsAnimating(true);
     setCurrentIndex((prev) => {
       const nextIndex = prev + visibleCards;
       return nextIndex >= testimonials.length ? 0 : nextIndex;
     });
-    
+
     setTimeout(() => setIsAnimating(false), 500);
   }, [isAnimating, visibleCards]);
 
   const prevSlide = useCallback(() => {
     if (isAnimating) return;
-    
+
     setIsAnimating(true);
     setCurrentIndex((prev) => {
       const prevIndex = prev - visibleCards;
       return prevIndex < 0 ? testimonials.length - (testimonials.length % visibleCards || visibleCards) : prevIndex;
     });
-    
+
     setTimeout(() => setIsAnimating(false), 500);
   }, [isAnimating, visibleCards]);
 
@@ -69,7 +70,17 @@ export default function TestimonialCarousel() {
           />
         </div>
 
-        <div className="lg:hidden">
+        <div className="hidden md:block lg:hidden">
+          <TestimonialMediumCarousel
+            visibleTestimonials={visibleTestimonials.slice(0, 2)} // show 2
+            currentIndex={currentIndex}
+            isAnimating={isAnimating}
+            onPrevSlide={prevSlide}
+            onNextSlide={nextSlide}
+          />
+        </div>
+
+        <div className="md:hidden">
           <TestimonialMobileCarousel
             testimonials={testimonials}
             currentIndex={currentIndex}
