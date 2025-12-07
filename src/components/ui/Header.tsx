@@ -114,7 +114,7 @@ export default function Header() {
                 height={40}
               />
               <button onClick={() => setIsOpen(false)} className="text-black">
-                <X size={32} />
+                <X size={30} />
               </button>
             </div>
 
