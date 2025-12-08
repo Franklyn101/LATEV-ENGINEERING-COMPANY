@@ -2,6 +2,7 @@
 import Link from "next/link";
 import router from "next/router";
 import { useEffect, useRef, useState } from "react";
+import { RippleButton } from "../shared/button";
 
 export default function Hero() {
   const slides = [
@@ -96,17 +97,15 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 mt-10">
             {/* Animated Hero Button */}
             <Link href={slides[current].link}>
-            <button className="relative cursor-pointer text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold bg-brand-red text-white border border-brand-red"
-           >
-              {slides[current].button}
-              
-              {/* {slides[current].link} */}
-              
-              {/* <span
-                className={`absolute inset-0 bg-brand-red transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
-                  }`}
-              ></span> */}
-            </button>
+              <RippleButton className="w-44">{slides[current].button}</RippleButton>
+              {/* <button className="relative cursor-pointer text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold bg-brand-red text-white border border-brand-red">
+                {slides[current].button}
+
+                <span
+                  className={`absolute inset-0 bg-brand-red transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
+                    }`}
+                ></span>
+              </button> */}
             </Link>
           </div>
         </div>
