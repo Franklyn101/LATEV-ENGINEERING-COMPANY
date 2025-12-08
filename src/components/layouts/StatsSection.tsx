@@ -91,7 +91,7 @@ export default function StatsSection() {
             {/* Back image */}
             <div className="absolute -right-6 -top-6 transform -rotate-6 shadow-xl rounded-xl overflow-hidden">
               <Image
-                src="/images/pipeline.jpg"
+                src="/images/pipeline-digging.jpg"
                 alt="Rig Operations"
                 width={600}
                 height={400}
