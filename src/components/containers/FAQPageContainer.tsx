@@ -146,7 +146,7 @@ export default function EngineeringFAQPage() {
       <SectionHero
         title="Frequently Asked Questions"
         subtitle="Get answers about our Coiled Tubing Downhole Tools and services"
-        imageUrl="/images/faq-hero.svg"
+        imageUrl="/images/contact-hero.png"
         overlayOpacity={0.7}
       />
 
@@ -308,7 +308,7 @@ export default function EngineeringFAQPage() {
                   Contact Our Team
                 </RippleButton>
                 <Link href="/Latev Engineering Company Brochure.pdf" download={"/Latev Engineering Company Brochure.pdf"} target="_blank" rel="noopener noreferrer">
-                  <RippleButton variant={"outline"}>
+                  <RippleButton variant={"outline"} className='text-white'>
                     Request Technical Documentation
                   </RippleButton>
                 </Link>

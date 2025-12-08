@@ -14,7 +14,7 @@ export const metadata = createMetadata({
     "Latev Engineering contact"
   ],
   url: "https://latevengineering.com/contact",
-  image: "/og-image.png",
+  image: "/images/contact-hero.png",
 });
 
 export default function ContactPage() { return <ModernContactPage /> }
