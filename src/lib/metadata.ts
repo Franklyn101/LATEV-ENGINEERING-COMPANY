@@ -44,6 +44,9 @@ export function createMetadata({
       "oilfield tools",
       "construction company",
       "industrial solutions",
+      "Lagos Construction",
+      "Oil drilling",
+      "off-shore",
       ...keywords,
     ],
 
