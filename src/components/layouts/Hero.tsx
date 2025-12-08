@@ -89,7 +89,7 @@ export default function Hero() {
       {/* Text + button */}
       <div className="w-full max-w-7xl mx-auto">
         <div className="relative z-20 max-w-5xl transition-opacity px-4 md:pl-10 duration-700">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight md:pr-10">
             {slides[current].title}
           </h1>
 

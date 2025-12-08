@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
 
           {/* LINK SECTION */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 text-center lg:text-left">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 text-left">
 
             <div>
               <h4 className="text-sm font-semibold mb-4 text-gray-400 uppercase tracking-wide">
@@ -79,7 +79,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
+            <div className="col-span-2 sm:col-span-1">
               <h4 className="text-sm font-semibold mb-4 text-gray-400 uppercase tracking-wide">
                 Location
               </h4>

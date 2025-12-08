@@ -16,8 +16,8 @@ interface ContactInfoProps {
   initialAnimation?: boolean;
 }
 
-export const ContactInformation: React.FC<ContactInfoProps> = ({ 
-  initialAnimation = true 
+export const ContactInformation: React.FC<ContactInfoProps> = ({
+  initialAnimation = true
 }) => {
   return (
     <motion.div
@@ -44,41 +44,64 @@ export const ContactInformation: React.FC<ContactInfoProps> = ({
 
       {/* Contact Info */}
       <div className="space-y-6">
-        <ContactInfoItem 
+        <ContactInfoItem
           icon={<IconMail className="h-6 w-6" />}
           content={
-          <>
-          <p className="text-gray-900 font-medium">mail.lagos@latevengineering.com</p>
-            <p className="text-gray-900 font-medium">mail.ph@latevengineering.com</p>
-            <p className="text-gray-900 font-medium">mail.warri@latevengineering.com</p>
+            <>
+              <a href="mailto:mail.lagos@latevengineering.com" className="text-gray-900 font-medium hover:underline">
+                mail.lagos@latevengineering.com
+              </a>
+              <br />
+
+              <a href="mailto:mail.ph@latevengineering.com" className="text-gray-900 font-medium hover:underline">
+                mail.ph@latevengineering.com
+              </a>
+              <br />
+
+              <a href="mailto:mail.warri@latevengineering.com" className="text-gray-900 font-medium hover:underline">
+                mail.warri@latevengineering.com
+              </a>
             </>
           }
-          
         />
-        
-        <ContactInfoItem 
+
+        <ContactInfoItem
           icon={<IconPhone className="h-6 w-6" />}
           content={
             <>
-              <p className="text-gray-900 font-medium">+234-818-102-2649</p>
-              <p className="text-gray-900 font-medium"> +234- 705-195-7019</p>
-              <p className="text-gray-900 font-medium">+234-705-901-9575</p>
-              <p className="text-gray-900 font-medium"> +234-705-195-7028</p>
+              <a href="tel:+2348181022649" className="text-gray-900 font-medium hover:underline">
+                +234-818-102-2649
+              </a>
+              <br />
+
+              <a href="tel:+2347051957019" className="text-gray-900 font-medium hover:underline">
+                +234-705-195-7019
+              </a>
+              <br />
+
+              <a href="tel:+2347059019575" className="text-gray-900 font-medium hover:underline">
+                +234-705-901-9575
+              </a>
+              <br />
+
+              <a href="tel:+2347051957028" className="text-gray-900 font-medium hover:underline">
+                +234-705-195-7028
+              </a>
             </>
           }
         />
-        
-        <ContactInfoItem 
+
+        <ContactInfoItem
           icon={<IconMapPin className="h-6 w-6" />}
           content={
             <>
-          <p className="text-gray-900 font-medium">16B Grace Anjous Drive, Off Adebayo Doherty Street, Off Admiralty Way, Lekki Phase 1, Lagos, Nigeria.</p>
-          <br></br>
-          <p>4, Agore Close, Off Niemoghe Avenue, Beside PHD Hotel, DDPA Estate, Ugborikoko Effurun, Delta State, Nigeria.</p>
-          <br></br>
-          <p>Plot 224 Iyowuna Drive, off Odili Road Trans Amadi Port-Harcourt, Rivers State, Nigeria.</p>
-          </>
-        }
+              <p className="text-gray-900 font-medium">16B Grace Anjous Drive, Off Adebayo Doherty Street, Off Admiralty Way, Lekki Phase 1, Lagos, Nigeria.</p>
+              <br></br>
+              <p>4, Agore Close, Off Niemoghe Avenue, Beside PHD Hotel, DDPA Estate, Ugborikoko Effurun, Delta State, Nigeria.</p>
+              <br></br>
+              <p>Plot 224 Iyowuna Drive, off Odili Road Trans Amadi Port-Harcourt, Rivers State, Nigeria.</p>
+            </>
+          }
         />
       </div>
 

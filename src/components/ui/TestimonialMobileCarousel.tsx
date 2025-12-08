@@ -20,7 +20,7 @@ export default function TestimonialMobileCarousel({
 }: TestimonialMobileCarouselProps) {
   return (
     <>
-      <div className="relative h-[420px]">
+      <div className="relative h-[440px]">
         <AnimatePresence mode="popLayout">
           <motion.div
             key={currentIndex}

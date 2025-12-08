@@ -29,7 +29,7 @@ export function createMetadata({
 
     description:
       description ||
-      "Latev Engineering Services Ltd delivers world-class engineering, oilfield tools, and construction solutions across Nigeria.",
+      "Latev Engineering Services Ltd delivers world-class engineering, oilfield tools, and construction solutions across Nigeria. Location: 16B Grace Anjous Drive • Off Adebayo Doherty Street • Off Admiralty Way • Lekki Phase 1 • Lagos, Nigeria.",
 
     icons: {
   icon: [

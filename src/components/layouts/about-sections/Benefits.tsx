@@ -75,7 +75,7 @@ const Benefits = () => {
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="bg-white rounded-lg p-4 lg:p-6 border border-white hover:shadow-sm hover:border-brand-red/30 transition-all duration-300"
+              className="bg-white rounded-lg p-4 lg:p-6 border max-md:border-gray-200 border-white hover:shadow-sm hover:border-brand-red/30 transition-all duration-300"
             >
               <div className="text-2xl mb-3">{benefit.icon}</div>
               <div className="text-brand-red text-lg font-semibold mb-3">
