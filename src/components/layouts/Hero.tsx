@@ -89,14 +89,14 @@ export default function Hero() {
       {/* Text + button */}
       <div className="w-full max-w-7xl mx-auto">
         <div className="relative z-20 max-w-5xl transition-opacity px-4 md:pl-10 duration-700">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight md:pr-10">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">
             {slides[current].title}
           </h1>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-10">
             {/* Animated Hero Button */}
             <Link href={slides[current].link}>
-            <button className="relative cursor-pointer text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold text-white border border-brand-red"
+            <button className="relative cursor-pointer text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold bg-brand-red text-white border border-brand-red"
            >
               {slides[current].button}
               
