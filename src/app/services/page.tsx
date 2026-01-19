@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   description:
     "Explore our full range of engineering, construction, and oilfield services across Nigeria. Latev Engineering delivers world-class solutions in coiled tubing, well intervention, industrial projects, and more.",
   url: "https://latevengineering.com/services",
-  image: "/images/services-og.png",
+  image: "/images/servicebg.jpg",
   keywords: [
     "Latev Engineering services",
     "engineering solutions Nigeria",

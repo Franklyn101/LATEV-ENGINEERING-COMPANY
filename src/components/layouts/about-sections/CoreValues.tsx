@@ -45,11 +45,11 @@ const CoreValues = () => {
         id="block-icons"
         className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white"
       >
-        <div className="text-left mb-8 max-w-7xl mx-auto">
+        <div className="text-center mb-8 lg:mb-12 max-w-7xl mx-auto">
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4 text-neutral-900">
             Our Core Values
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-lg md:text-2xl lg:text-2xl text-gray-800 mb-5 lg:mb-8 max-w-2xl">
+          <motion.p variants={fadeInUp} className="text-lg md:text-2xl lg:text-2xl text-gray-800 mb-5 lg:mb-8 max-w-2xl mx-auto">
             TRUST - EXCELLENCE - ACCOUNTABILITY - MOMENTUM
           </motion.p>
         </div>

@@ -51,7 +51,7 @@ const ProductsServices = () => {
       <div className="max-w-7xl mx-auto">
         <motion.h2
           variants={fadeInUp}
-          className="text-3xl md:text-4xl font-bold mb-10 lg:mb-16 text-center text-gray-900"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 lg:mb-16 text-center text-gray-900 font-serif"
         >
           Our Core Products
         </motion.h2>

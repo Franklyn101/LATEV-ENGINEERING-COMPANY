@@ -2,6 +2,7 @@
 import Link from "next/link";
 import router from "next/router";
 import { useEffect, useRef, useState } from "react";
+import { RippleButton } from "../shared/button";
 
 export default function Hero() {
   const slides = [
@@ -89,24 +90,22 @@ export default function Hero() {
       {/* Text + button */}
       <div className="w-full max-w-7xl mx-auto">
         <div className="relative z-20 max-w-5xl transition-opacity px-4 md:pl-10 duration-700">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight md:pr-10">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">
             {slides[current].title}
           </h1>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-10">
             {/* Animated Hero Button */}
             <Link href={slides[current].link}>
-            <button className="relative cursor-pointer text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold text-white border border-brand-red"
-           >
-              {slides[current].button}
-              
-              {/* {slides[current].link} */}
-              
-              {/* <span
-                className={`absolute inset-0 bg-brand-red transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
-                  }`}
-              ></span> */}
-            </button>
+              <RippleButton className="w-44">{slides[current].button}</RippleButton>
+              {/* <button className="relative cursor-pointer text-base overflow-hidden px-4 w-44 py-3 rounded font-semibold bg-brand-red text-white border border-brand-red">
+                {slides[current].button}
+
+                <span
+                  className={`absolute inset-0 bg-brand-red transition-transform duration-500 ease-in-out z-[-1] ${animateButton ? "translate-x-0" : "-translate-x-full"
+                    }`}
+                ></span>
+              </button> */}
             </Link>
           </div>
         </div>
