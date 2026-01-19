@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 const CompanyStory = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -26,8 +27,8 @@ const CompanyStory = () => {
             className="relative"
           >
             <div className="bg-white rounded-2xl p-4 md:p-6 lg:p-8 border border-gray-200 shadow-lg">
-              <div className="w-full h-64 bg-linear-to-br from-brand-red/10 to-red-600/10 rounded-xl mb-6 flex items-center justify-center">
-                <span className="text-gray-500 text-lg">Company Headquarters Image</span>
+              <div className="w-full h-full b rounded-xl mb-6 flex items-center justify-center">
+                <Image src="/images/siteimages/crew5.jpeg" alt="Company Story Illustration" width={700} height={700} />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-brand-red">Our Foundation</h3>
               <p className="text-gray-600">
