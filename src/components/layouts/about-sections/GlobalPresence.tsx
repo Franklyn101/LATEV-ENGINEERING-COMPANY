@@ -36,14 +36,14 @@ const GlobalPresence = () => {
             </div>
             <h3 className="text-2xl font-bold mb-4 text-brand-red">Worldwide Operations</h3>
             <p className="text-gray-600 mb-4">
-              With offices and operations across three continents, Latev Engineering delivers
+              With offices and operations across three states, Latev Engineering delivers
               coiled tubing solutions to energy companies worldwide.
             </p>
             <ul className="text-gray-600 space-y-2">
-              <li>• Headquarters: Houston, Texas</li>
-              <li>• Middle East Office: Dubai, UAE</li>
-              <li>• Asia Pacific Office: Singapore</li>
-              <li>• European Operations: Aberdeen, UK</li>
+              <li>• Headquarters: Lagos, Nigeria.</li>
+              <li>• Branch Office: Delta State, Nigeria.</li>
+              <li>• Branch Office: Rivers State, Nigeria.</li>
+             
             </ul>
           </motion.div>
 
