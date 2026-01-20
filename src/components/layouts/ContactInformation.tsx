@@ -70,22 +70,22 @@ export const ContactInformation: React.FC<ContactInfoProps> = ({
           content={
             <>
               <a href="tel:+2348181022649" className="text-gray-900 font-medium hover:underline">
-                +234-818-102-2649
+                Lagos: +234-818-102-2649
               </a>
               <br />
 
               <a href="tel:+2347051957019" className="text-gray-900 font-medium hover:underline">
-                +234-705-195-7019
+                Lagos: +234-705-195-7019
               </a>
               <br />
 
               <a href="tel:+2347059019575" className="text-gray-900 font-medium hover:underline">
-                +234-705-901-9575
+               ph: +234-705-901-9575
               </a>
               <br />
 
               <a href="tel:+2347051957028" className="text-gray-900 font-medium hover:underline">
-                +234-705-195-7028
+                Warri: +234-705-195-7028
               </a>
             </>
           }
