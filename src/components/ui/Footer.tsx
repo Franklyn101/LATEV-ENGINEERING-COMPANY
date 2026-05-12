@@ -22,7 +22,7 @@ export default function Footer() {
           {/* LOGO + MESSAGE */}
           <div className="flex flex-col items-center lg:items-start max-w-sm">
             <Image
-              src="/images/logonobg.png"
+              src="/logos/PNG/whitered.png"
               width={140}
               height={48}
               alt="Latev Engineering Services Logo"

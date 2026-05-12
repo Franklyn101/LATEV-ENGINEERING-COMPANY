@@ -40,7 +40,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logonobg.png"
+            src={scrolled ? "/images/logonobg.png" : "/logos/PNG/whitered.png"}
             alt="Latev Engineering Logo"
             width={160}
             height={48}
