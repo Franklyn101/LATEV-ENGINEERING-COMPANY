@@ -1,3 +1,49 @@
+# Latev Engineering Services - Corporate Website
+
+A modern, high-performance corporate website for Latev Engineering Services Ltd, an oilfield services and engineering company specializing in coiled tubing downhole tools, well intervention, and engineering solutions.
+
+## 🚀 Overview
+
+This project delivers a professional brand presence and lead-generation platform for Latev Engineering, showcasing their expertise in oilfield services, construction management, and engineering solutions. The website features a responsive design, smooth animations, and comprehensive service presentations.
+
+## ✨ Key Features
+
+- **Hero Section** with dynamic service icons and brand messaging
+- **Interactive FAQ Page** with category filtering and accordion animations
+- **Contact Page** with form validation, map integration, and social links
+- **Service Grid** showcasing 6 core service offerings
+- **Testimonial Carousel** with client success stories
+- **Performance Metrics** with animated counters (10+ years expertise, 50+ tools delivered, etc.)
+- **Project Highlights** section for case studies
+- **Responsive Navigation** optimized for all device sizes
+- **Cookie Consent** system for GDPR compliance
+- **Modern Contact Form** with validation and toast notifications
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Tabler Icons
+- **UI Components:** Custom component library (RippleButton, InputField)
+- **Notifications:** Sonner (toasts)
+- **Form Handling:** React Hook Form + custom validation
+
+## 🏗️ Architecture
+
+The project follows a modular component-based architecture:
+
+src/
+├── app/ # Next.js app router pages
+├── components/ # Reusable UI components
+│ ├── faq/ # FAQ-specific components
+│ ├── shared/ # Shared UI components
+│ └── contact/ # Contact page components
+├── data/ # Static data files (faqData, etc.)
+├── types/ # TypeScript type definitions
+└── styles/ # Global styles and Tailwind config
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
